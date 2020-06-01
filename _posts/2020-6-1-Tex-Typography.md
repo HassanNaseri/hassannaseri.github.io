@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 Some years ago I had to write my PhD thesis using a LaTeX template provided by the univeristy. It was a half-ready tempalte; and I was very obsessive. Consequently, I spent same amount of time on styling as I spent on writing the actual content :D. There were two issues with the existing style: a) the official graphical style of the university was not present in the LaTeX template; and b) typesetting for mathematics and some other environments were quite limitted and basic.
 
