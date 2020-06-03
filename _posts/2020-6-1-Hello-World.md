@@ -16,3 +16,7 @@ I used GitHub to host the blog and automatically build Jekyll webiste. This is n
 
 ## Short Bio
 I started my work in ICT sector as a web developer long time ago. Now I have Ph.D. in [Signal Processing](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5230869).
+
+Including an image to test if it works
+![Cover art from my thesis](/images/8round.jpg)
+
