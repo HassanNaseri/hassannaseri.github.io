@@ -5,8 +5,7 @@ Over the years I have been setting up many weblogs and CMSs for differet people.
 
 
 ## Blog  Setup
-I used GitHub to host the blog and automatically build Jekyll webiste. This is nicely done with GitHub Pages. I followed the instructions given here:
-https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/. I then installed Jekyll on my MacBook, and started experimenting with it on local machine. All in all, I liked this exercise very much :) And some note regarding the whole setup.
+I used GitHub to host the blog and automatically build Jekyll webiste. This is nicely done with GitHub Pages. I followed the instructions given [in this well written blog post](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/). Afterwards, I installed Jekyll on my MacBook, and started experimenting with it on local machine. All in all, I liked this exercise very much :). Here are some note regarding my experince.
 
 - The use of MarkDown language for tech. blogging is awesome. I like the easy and nice typesetting for text, code, and math formulas. 
 - Jekyll is many times better than WordPress if you want a simple weblog. It is minimal; The build process is sophisticated; and you have great control over everything.
@@ -15,3 +14,4 @@ https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/. I then
 
 
 ## Short Bio
+I started my work in ICT sector as a web developer long time ago. Now I ahve Ph.D. in Signal Processing.
