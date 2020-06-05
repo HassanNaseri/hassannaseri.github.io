@@ -248,4 +248,6 @@ Standard PDF:
 	\usepackage{tikz}
 	\usetikzlibrary{arrows,calc,positioning}   
 
+If you want to have a navigation pane for your long PDF, then use `hyperref`. But not that, this package is notorious for causing issues.
+	\usepackage[pdfpagelabels]{hyperref}
 
