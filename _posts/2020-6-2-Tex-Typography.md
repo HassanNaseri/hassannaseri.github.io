@@ -7,7 +7,7 @@ Let's fist discuss the second issue. I suumarize what I learned about Typography
 
 Coming back to the first issue of overal graphical style, the main problem was the absence of official fonts in the LaTeX template. There is no easy way to use Sentinel and Nimbus Sans as text and math fonts in LaTeX. To adress this issue, I eventually switched from LaTeX to XeLaTeX to use OpenType fonts freely for text and math. This document, however, is about LaTeX or applicable to both LaTeX and XeLaTeX unless exlicitly specified. A separate discussion about font setting in XeTeX is included as well. 
 
-Before diving in TeX detail, I have a comment. Follow an style guide. There are few comprehensive guides [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt.
+Before diving in TeX detail, I have a comment. This post is not a comprehensive guide on styling, but a mere collection of random notes. I would like to strees the importance of following a style guide. There are few comprehensive style guides out there, but only use one of them. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt. And if you are still in doubt, do some googling. A valuable resource for me was [english.stackexchange.com](https://english.stackexchange.com/).
 
 ## Matching Fonts 
 TeX has two main fornt families used for text 'Serif' and 'Non Serif'. There is also 'Type Writer' family. For math environment, there is normal math font and 'Match Caligraphy' font. Other font shapes might be also used in math, including 'Math Blackboard' and 'Math Script'. Ideally all these font families should have matching shapes. Matching menas that they have relatively simillar size, weight and shape, such that they look to complement each other.  
@@ -53,6 +53,8 @@ For some reason LaTeX does not have upright greek letters, they are all italic. 
 Always use microtype
 
 	\usepackage[protrusion=true,expansion=true]{microtype}
+
+The `microtype` works best if loaded before other packages.
 
 Some fine tuning for typesetting, french standard!
 	\frenchspacing
