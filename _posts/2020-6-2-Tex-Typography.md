@@ -9,8 +9,12 @@ Coming back to the first issue of overal graphical style, the main problem was t
 
 Before diving in TeX detail, I have a comment. This post is not a comprehensive guide on styling, but a mere collection of random notes. I would like to strees the importance of following a style guide. There are few comprehensive style guides out there, but only use one of them. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt. And if you are still in doubt, do some googling. A valuable resource for me was [english.stackexchange.com](https://english.stackexchange.com/).
 
-## Matching Fonts 
-TeX has two main fornt families used for text 'Serif' and 'Non Serif'. There is also 'Type Writer' family. For math environment, there is normal math font and 'Match Caligraphy' font. Other font shapes might be also used in math, including 'Math Blackboard' and 'Math Script'. Ideally all these font families should have matching shapes. Matching menas that they have relatively simillar size, weight and shape, such that they look to complement each other.  
+##  Fonts 
+A short excuse before we start. To keep things simple, the word `font` is used loosely in this document, and interchangably with word `typeface`. 
+
+TeX has two main fornt families used for text 'Serif' and 'Non Serif'. There is also 'Type Writer' family. For math environment, there is normal math font and 'Match Caligraphy' font. Other font shapes might be also used in math, including 'Math Blackboard' and 'Math Script'. Ideally all these font families should have matching shapes. Matching menas that they have relatively simillar size, weight and shape, such that they look to complement each other. 
+
+To me, the foremost component of typesetting is the consistent use of matching fonts throughout the document. One can write a whole book with perfect tyepsetting using only one font, but it is hard to compose a profesional looking document with a handfull of fonts. 
 
 If a basic TeX template is used the default font/typeface is Computer Modern. This has matching fonts for all font families.
 
@@ -20,7 +24,9 @@ Use `AMS` packages.
     % AMS packages
     \usepackage{mathtools,amsfonts,amssymb,amsthm,amsbsy} 
     \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
-    
+
+There are plenty of other packages for example `nicefrac` creates better looking fractions.
+
 ### Times Font
 The `newtx` package has exceptionally good text and math typesetting for `Times New Roman` family of fonts. It is comparable to the default Computer Modern font in terms of typesetting quality.
 
@@ -46,7 +52,52 @@ The order in which you load packages is important. For example you may need to l
 ### Upright Greek
 For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.
 
+
 ### XeTeX
+
+RequirePackage{amsmath,amssymb,amsthm,trace}
+\interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
+\usepackage{mathtools}
+\RequirePackage{accents} % accents package should be loaded before unicode-math
+% XeLaTeX
+\RequirePackage{microtype}
+% Set fonts
+\RequirePackage{fontspec}
+% Set text font
+\setmainfont[Ligatures=TeX,Numbers={OldStyle,Proportional},Scale=0.95,WordSpace=1.2]{Sentinel Book} % Set the serif font
+\setsansfont[Scale=0.95]{Nimbus Sans} % Set the sans serif font
+%
+%	% Set math font
+\RequirePackage[math-style=TeX]{unicode-math}
+%	%%\setmathfont{XITS Math}
+%	\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+\setmathfont{latinmodern-math.otf}[FakeBold=0.05,Scale=0.9]
+\setmathfont{latinmodern-math.otf}[range=bb,Scale=1]
+\AtBeginDocument{% Needed by unicode-math for a bug related to mathbf
+	\renewcommand{\mathbf}[1]{\symbf{#1}}
+}
+
+\setmonofont[Scale=0.85]{Consolas}
+%\setmathrm{Optima}
+%\setboldmathrm[BoldFont={Optima ExtraBlack}]{Optima Bold}
+% Load polyglossia package for multi-language support
+\RequirePackage{polyglossia}
+
+
+
+\setmathfont[range=\mathbb,Scale=MatchUppercase]{texgyrepagella-math.otf}
+
+\newfontfamily\thfont{Sentinel Book}[
+WordSpace={2}
+]
+% Declare theorem environments
+\usepackage{thmtools}
+\declaretheoremstyle[
+	numberwithin=chapter,
+	bodyfont=\thfont\itshape,
+]{mythstyle}
+\declaretheorem[style=mythstyle]{theorem}
+
 
 ## Spacing, Kerning, Typesetting
 
@@ -56,10 +107,26 @@ Always use microtype
 
 The `microtype` works best if loaded before other packages.
 
+Spacing is mainly adjusted by TeX itself and by your font packages.
+
+### Text spacing
 Some fine tuning for typesetting, french standard!
+
 	\frenchspacing
 	\usepackage{impnattypo}
 
+### Math spacing
+ % Adjust math line spacing
+ 
+\renewcommand*{\arraystretch}{1.1} % for array/matrix environments
+\setlength{\jot}{8pt} % for split environment
+
+### Line Breaks and Hyphenation
+This is also something that you use TeX to do it.
+
+	\setlength{\emergencystretch}{1em}
+
+	\usepackage{ragged2e}
 
 
 ## Floats
@@ -71,6 +138,9 @@ You probably use `graphicx` to include images.
 	\usepackage[caption=false,font=footnotesize]{subfig}
 
 ### Tables
+\usepackage{tabu}
+
+Define one table styles and stick to it for consistency.
 
 ### Other Environments
  	\usepackage{algorithm}
@@ -96,5 +166,14 @@ You need to reffer to figures, sections, equasations, citations, etc. in the tex
 
 	\usepackage[inline]{enumitem}
 	\setlist{nolistsep}
+
+
+## Better PDF
+Use only vector graphics.
+
+Standard PDF:
+	\usepackage[x-1a]{pdfx}
+    
+    
 
 
