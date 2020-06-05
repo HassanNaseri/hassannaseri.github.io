@@ -250,4 +250,13 @@ Standard PDF:
 
 If you want to have a navigation pane for your long PDF, then use `hyperref`. But not that, this package is notorious for causing issues.
 	\usepackage[pdfpagelabels]{hyperref}
+    
+    
+## Consistency By Definition
+Use macros, pre-defined styles and colors. It makes your life easier.
+
+\definecolor{Fuchsia}{cmyk}{0.27,0.9,0,0}%
+\colorlet{rowcolor1}{Fuchsia!50!white}
+
+
 
