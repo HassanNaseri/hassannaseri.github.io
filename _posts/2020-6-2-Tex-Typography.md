@@ -24,7 +24,9 @@ If a basic TeX template is used the default font/typeface is Computer Modern. Th
 Use `AMS` packages.
 
     % AMS packages
-    \usepackage{mathtools,amsfonts,amssymb,amsthm,amsbsy} 
+    \usepackage{mathtools}
+    \usepackage{amsfonts,amssymb,amsthm,amsbsy}
+    \usepackage{amsmath,amssymb,amsthm,trace}
     \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
 
 There are plenty of other packages for example `nicefrac` creates better looking fractions.
@@ -57,48 +59,47 @@ For some reason LaTeX does not have upright greek letters, they are all italic. 
 
 ### XeTeX
 
-RequirePackage{amsmath,amssymb,amsthm,trace}
-\interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
-\usepackage{mathtools}
-\RequirePackage{accents} % accents package should be loaded before unicode-math
-% XeLaTeX
-\RequirePackage{microtype}
-% Set fonts
-\RequirePackage{fontspec}
-% Set text font
-\setmainfont[Ligatures=TeX,Numbers={OldStyle,Proportional},Scale=0.95,WordSpace=1.2]{Sentinel Book} % Set the serif font
-\setsansfont[Scale=0.95]{Nimbus Sans} % Set the sans serif font
-%
-%	% Set math font
-\RequirePackage[math-style=TeX]{unicode-math}
-%	%%\setmathfont{XITS Math}
-%	\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
-\setmathfont{latinmodern-math.otf}[FakeBold=0.05,Scale=0.9]
-\setmathfont{latinmodern-math.otf}[range=bb,Scale=1]
-\AtBeginDocument{% Needed by unicode-math for a bug related to mathbf
-	\renewcommand{\mathbf}[1]{\symbf{#1}}
-}
+	
+	\interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
+	\usepackage{mathtools}
+	\RequirePackage{accents} % accents package should be loaded before unicode-math
+	% XeLaTeX
+	\RequirePackage{microtype}
+	% Set fonts
+	\RequirePackage{fontspec}
+	% Set text font
+	\setmainfont[Ligatures=TeX,Numbers={OldStyle,Proportional},Scale=0.95,WordSpace=1.2]{Sentinel Book} % Set the serif font
+	\setsansfont[Scale=0.95]{Nimbus Sans} % Set the sans serif font
+	%
+	%	% Set math font
+	\RequirePackage[math-style=TeX]{unicode-math}
+	%	%%\setmathfont{XITS Math}
+	%	\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+	\setmathfont{latinmodern-math.otf}[FakeBold=0.05,Scale=0.9]
+	\setmathfont{latinmodern-math.otf}[range=bb,Scale=1]
+	\AtBeginDocument{% Needed by unicode-math for a bug related to mathbf
+		\renewcommand{\mathbf}[1]{\symbf{#1}}
+	}
 
-\setmonofont[Scale=0.85]{Consolas}
-%\setmathrm{Optima}
-%\setboldmathrm[BoldFont={Optima ExtraBlack}]{Optima Bold}
-% Load polyglossia package for multi-language support
-\RequirePackage{polyglossia}
+	\setmonofont[Scale=0.85]{Consolas}
 
+Multiligual support
+	\RequirePackage{polyglossia}
 
 
-\setmathfont[range=\mathbb,Scale=MatchUppercase]{texgyrepagella-math.otf}
 
-\newfontfamily\thfont{Sentinel Book}[
-WordSpace={2}
-]
-% Declare theorem environments
-\usepackage{thmtools}
-\declaretheoremstyle[
-	numberwithin=chapter,
-	bodyfont=\thfont\itshape,
-]{mythstyle}
-\declaretheorem[style=mythstyle]{theorem}
+	\setmathfont[range=\mathbb,Scale=MatchUppercase]{texgyrepagella-math.otf}
+
+	\newfontfamily\thfont{Sentinel Book}[
+	WordSpace={2}
+	]
+	% Declare theorem environments
+	\usepackage{thmtools}
+	\declaretheoremstyle[
+		numberwithin=chapter,
+		bodyfont=\thfont\itshape,
+	]{mythstyle}
+	\declaretheorem[style=mythstyle]{theorem}
 
 
 ## Spacing, Kerning, Typesetting
