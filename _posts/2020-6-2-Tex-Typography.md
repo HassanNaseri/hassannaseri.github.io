@@ -118,6 +118,8 @@ Some fine tuning for typesetting, french standard!
 ### Math spacing
  % Adjust math line spacing
  
+ \usepackage{array}
+ 
 \renewcommand*{\arraystretch}{1.1} % for array/matrix environments
 \setlength{\jot}{8pt} % for split environment
 
@@ -140,6 +142,10 @@ You probably use `graphicx` to include images.
 ### Tables
 \usepackage{tabu}
 
+\usepackage{multirow, multicol, makecell}
+\usepackage{rotating}
+\renewcommand\theadfont{\bfseries}
+
 Define one table styles and stick to it for consistency.
 
 ### Other Environments
@@ -151,11 +157,16 @@ Define one table styles and stick to it for consistency.
 
 You need to reffer to figures, sections, equasations, citations, etc. in the text. All of such items need to be labeled for consistent reffering. Use prefix in your labels, eg \label{sec:introduction}. 
 
+Use BibTeX or Biber
+
 	\usepackage{cite}
 	\let\labelindent\relax % needed for compatibility with IEEtran
 	
 
-	
+	% Load glossaries package to manage glossaries and acronyms
+	\usepackage[xindy,acronym,shortcuts,nosuper,nonumberlist]{glossaries}
+	\usepackage{glossary-longragged}
+	\usepackage{glossary-tree}
 
 
 	\usepackage[acronym,shortcuts,nowarn,smallcaps]{glossaries}
