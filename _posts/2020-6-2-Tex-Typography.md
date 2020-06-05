@@ -57,6 +57,17 @@ The order in which you load packages is important. For example you may need to l
 ### Upright Greek
 For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.
 
+	\makeatletter
+	\def\changegreek{\@for\next:={%
+  		alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,%
+  		tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
+  		\do{\expandafter\let\csname\next\expandafter\endcsname\csname\next up\endcsname}}
+	\def\changegreekbf{\@for\next:={%
+  		alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,%
+  		tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
+  		\do{\expandafter\def\csname\next\expandafter\endcsname\expandafter{%
+    	\expandafter\bm\expandafter{\csname\next up\endcsname}}}}
+	\makeatother
 
 ### XeTeX
 
