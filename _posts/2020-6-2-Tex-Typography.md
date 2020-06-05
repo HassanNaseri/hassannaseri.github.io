@@ -14,6 +14,25 @@ TeX has two main fornt families used for text 'Serif' and 'Non Serif'. There is 
 If a basic TeX template is used the default font/typeface is Computer Modern. This has matching fonts for all font families.
 
 ### Times Font
+The `newtx` package has exceptionally good text and math typesetting for `Times New Roman` family of fonts. It is comparable to the default Computer Modern font in terms of typesetting quality.
+
+	\usepackage{newtxtext} % newtx Times font
+	\usepackage[cmintegrals,cmbraces,vvarbb]{newtxmath}  % newtx Times font, math symbols
+
+The actual serif font is a modified version of Adobe Times. It has all the maths symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a monospace set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text.
+
+
+### Better Math
+Use `AMS` packages.
+
+    % AMS packages
+    \usepackage{mathtools,amsfonts,amssymb,amsthm,amsbsy} 
+    \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
+	
+	\usepackage[scr=rsfso]{mathalfa}
+    \usepackage{textcomp} % more symbols
+    \usepackage{bm} % poor man's bold 
+    \frenchspacing
 
 ### Bolds, Italics
 
@@ -25,5 +44,6 @@ If a basic TeX template is used the default font/typeface is Computer Modern. Th
 
 Always use microtype
 
+	\usepackage[protrusion=true,expansion=true]{microtype}
 
 ##
