@@ -152,6 +152,8 @@ Define one table styles and stick to it for consistency.
  	\usepackage{algorithm}
 	\usepackage[noend]{algpseudocode}
 	\floatname{algorithm}{Table}
+    
+    \usepackage{listings}
  
 ## References
 
@@ -163,15 +165,34 @@ Use BibTeX or Biber
 	\let\labelindent\relax % needed for compatibility with IEEtran
 	
 
-	% Load glossaries package to manage glossaries and acronyms
-	\usepackage[xindy,acronym,shortcuts,nosuper,nonumberlist]{glossaries}
-	\usepackage{glossary-longragged}
-	\usepackage{glossary-tree}
 
+### Acronyms and Glosaries
+Use this for list of symbols and acronyms
 
 	\usepackage[acronym,shortcuts,nowarn,smallcaps]{glossaries}
 	\glsdisablehyper
 	\makeglossaries
+
+	% Load glossaries package to manage glossaries and acronyms
+	\usepackage[xindy,acronym,shortcuts,nosuper,nonumberlist]{glossaries}
+	\usepackage{glossary-longragged}
+	\usepackage{glossary-tree}
+	%
+	\newglossarystyle{longuc}%
+	{%
+		\setglossarystyle{long}%
+		\renewcommand{\glossentry}[2]{%
+			\glsentryitem{##1}\glstarget{##1}{\glossentryname{##1}} &
+			\Glossentrydesc{##1}\glspostdescription\space ##2\tabularnewline
+		}%
+	}
+	\setacronymstyle{long-short}
+	\glsdisablehyper
+	%
+	\makeglossaries
+	\renewcommand*{\acronymfont}[1]{\mbox{#1}}
+
+
 
 ## Lists
 
