@@ -9,14 +9,9 @@ I used GitHub to host the blog and automatically build Jekyll webiste. This is n
 
 - The use of MarkDown language for tech. blogging is awesome. I like the easy and nice typesetting for text, code, and math formulas. 
 - Jekyll is many times better than WordPress if you want a simple weblog. It is minimal; The workflow is sophisticated; and you have great control over everything.
-- GitHub Pages makes everything easy.
 - DNS setup was not very smooth. I used CNAME, but could not set it for the root of the domain. So, started with subdomain of blog.randomdoctor.com until I find time to sort out the rest.
 
 
 
 ## Short Bio
-I started my work in ICT sector as a web developer long time ago. Now I have Ph.D. in [Signal Processing](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5230869).
-
-Including an image to test if it works
-![Cover art from my thesis](/images/8round.jpg)
-
+I started my work in ICT sector as a web developer long time ago. Now I ahve Ph.D. in Signal Processing.
