@@ -137,6 +137,15 @@ You probably use `graphicx` to include images.
 ### Figures
 	\usepackage{float}
 	\usepackage{dblfloatfix}
+	
+
+	\usepackage{float, wrapfig}
+	\usepackage[format=plain]{caption}
+	\usepackage{subcaption}
+	\captionsetup[subfigure]{justification=centering}
+
+If you have an old template that is not compatible with `subcaption` you may use `subfig` instead.
+
 	\usepackage[caption=false,font=footnotesize]{subfig}
 
 ### Tables
@@ -155,6 +164,17 @@ Define one table styles and stick to it for consistency.
     
     \usepackage{listings}
  
+	\colorlet{commentColor}{aaltoGray!60!black}%
+	\usepackage[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]{algorithm2e}%
+	\newcommand\mycommfont[1]{\ttfamily\bfseries\textcolor{commentColor}{#1}}%
+	\SetCommentSty{mycommfont}%
+	\renewcommand{\algorithmcfname}{Table}%
+	\SetAlgoBlockMarkers{}{}%
+	\SetKwProg{Fn}{}{\{}{}%
+	\SetEndCharOfAlgoLine{}%
+	\DontPrintSemicolon%
+	\SetNlSty{}{}{:}%
+
 ## References
 
 You need to reffer to figures, sections, equasations, citations, etc. in the text. All of such items need to be labeled for consistent reffering. Use prefix in your labels, eg \label{sec:introduction}. 
@@ -164,6 +184,10 @@ Use BibTeX or Biber
 	\usepackage{cite}
 	\let\labelindent\relax % needed for compatibility with IEEtran
 	
+	\renewcommand\citeleft{{\small[}}
+	\renewcommand\citeright{{\small]}} 
+	\bibliographystyle{../support/IEEEtran}
+	\usepackage{url}
 
 
 ### Acronyms and Glosaries
@@ -201,11 +225,15 @@ Use this for list of symbols and acronyms
 
 
 ## Better PDF
-Use only vector graphics.
+
 
 Standard PDF:
 	\usepackage[x-1a]{pdfx}
     
-    
+ Use only vector graphics. SVG, PSD, and PDF formats work best as importing vector graphics.
+ You can also craete impressive things inside TeX if you are patient.
+ 
+	\usepackage{tikz}
+	\usetikzlibrary{arrows,calc,positioning}   
 
 
