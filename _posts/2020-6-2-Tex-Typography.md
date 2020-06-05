@@ -24,9 +24,10 @@ If a basic TeX template is used the default font/typeface is Computer Modern. Th
 Use `AMS` packages.
 
     % AMS packages
-    \usepackage{mathtools}
-    \usepackage{amsfonts,amssymb,amsthm,amsbsy}
-    \usepackage{amsmath,amssymb,amsthm,trace}
+    \usepackage{mathtools,amsfonts,amssymb,amsthm}
+    
+Note that we load `mathtools` instead of `amsmath` to fix some minor issues.
+    
     \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
 
 There are plenty of other packages for example `nicefrac` creates better looking fractions.
