@@ -7,7 +7,9 @@ Let's fist discuss the second issue. I suumarize what I learned about Typography
 
 Coming back to the first issue of overal graphical style, the main problem was the absence of official fonts in the LaTeX template. There is no easy way to use Sentinel and Nimbus Sans as text and math fonts in LaTeX. To adress this issue, I eventually switched from LaTeX to XeLaTeX to use OpenType fonts freely for text and math. This document, however, is about LaTeX or applicable to both LaTeX and XeLaTeX unless exlicitly specified. A separate discussion about font setting in XeTeX is included as well. 
 
-Before diving in TeX detail, I have a comment. This post is not a comprehensive guide on styling, but a mere collection of random notes. I would like to strees the importance of following a style guide. There are few comprehensive style guides out there, but only use one of them. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt. And if you are still in doubt, do some googling. A valuable resource for me was [english.stackexchange.com](https://english.stackexchange.com/).
+Before diving in TeX detail, I have a comment. This post is not a comprehensive guide on styling, but a mere collection of random notes. 
+
+Ideally you should have a well constructed LaTeX template to start with and do not worry about anything else. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive person! I would like to strees the importance of following a style guide. There are few comprehensive style guides out there, but only use one of them. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt. And if you are still in doubt, do some googling. A valuable resource for me was [english.stackexchange.com](https://english.stackexchange.com/).
 
 ##  Fonts 
 A short excuse before we start. To keep things simple, the word `font` is used loosely in this document, and interchangably with word `typeface`. 
@@ -222,6 +224,16 @@ Use this for list of symbols and acronyms
 
 	\usepackage[inline]{enumitem}
 	\setlist{nolistsep}
+
+	\usepackage[shortlabels, inline]{enumitem}
+
+	\SetEnumitemKey{midsep}{topsep=5pt, partopsep=1pt, parsep=1pt, itemsep=5pt}
+	\SetEnumitemKey{hang-1}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+		leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
+	\SetEnumitemKey{hang-2}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt,
+		leftmargin=!, labelindent=\parindent, labelsep=0.5em, labelwidth=\parindent}
+	\SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
+	\SetEnumitemKey{Alph}{label=\emph{\Alph*}\textbf{.}}
 
 
 ## Better PDF
