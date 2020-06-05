@@ -54,7 +54,7 @@ The order in which you load packages is important. For example you may need to l
 
 	\usepackage{bm} % poor man's bold	
 
-### Upright Greek
+### Upright Bold Greek Letters!
 For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.
 
 	\makeatletter
@@ -271,5 +271,16 @@ Use macros, pre-defined styles and colors. It makes your life easier.
 \definecolor{Fuchsia}{cmyk}{0.27,0.9,0,0}%
 \colorlet{rowcolor1}{Fuchsia!50!white}
 
+	\newcommand{\TR}{\ensuremath{^{\raisemath{0pt}{\mathrm{\mathsmaller{T}}}}}}% Transpose symbol
+
+
+	% Definintion Equality, substitudes \triangleq
+	\newcommand{\defeq}{%
+  	\mathrel{\vbox{\offinterlineskip\ialign{%
+    	\hfil##\hfil\cr
+    	$\scriptscriptstyle\triangle$\cr
+    	\noalign{\kern.25ex}
+    	$=$\cr
+	}}}}
 
 
