@@ -14,6 +14,7 @@ For example, I also enjoy writing LaTeX code to create a document.
 
 What connects these all from programming perspective is the concept of [lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation). 
 
+According to [Wikipedia](https://en.wikipedia.org/wiki/Lazy_evaluation). 
 
 Lazy evaluation
 AKA delayed/deferred evaluation: delays the evaluation of an expression until its value is needed
