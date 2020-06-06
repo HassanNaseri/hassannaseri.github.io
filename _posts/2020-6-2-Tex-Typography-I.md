@@ -1,15 +1,13 @@
 ---
 published: true
 ---
-Some years ago I had to write my PhD thesis using a LaTeX template provided by the univeristy. It was a half-ready tempalte; and I was very obsessive. Consequently, I spent same amount of time on styling as I spent on writing the actual content :D. There were two issues with the existing style: a) the official graphical style of the university was not present in the LaTeX template; and b) typesetting for mathematics and some other environments were quite limitted and basic.
+Some years ago I had to write my PhD thesis using a `LaTeX` template provided by the univeristy. Sometimes I become very obsessive with how things look like, and that template did not look right. Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D, hoping that it may benefit others as well. Two major problems of the provided template were: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limitted and basic.
 
-Let's fist discuss the second issue. I summarize what I learned about Typography in LaTeX in this post.
+Addressing the first problem, required enabling Sentinel and Nimbus Sans fonts in LaTeX for both text and math, which can only end in despair. I eventually switched from `pdfTeX` to [XeTeX](https://en.wikipedia.org/wiki/XeTeX) to use OpenType fonts freely for text and math. The second problem, was adressed using a pletora of new packages, settings and definitions applicable to both `LaTeX` and `XeLaTex`. I am now publishing the highlights of what I learned in this process in a couple of blog posts. The first part covers `LaTeX` and more generic considerations regarding typesetting. The second part will cover `XeTeX` stuff and a long list of custom setiings and definitions.
 
-Coming back to the first issue of overal graphical style, the main problem was the absence of official fonts in the LaTeX template. There is no easy way to use Sentinel and Nimbus Sans as text and math fonts in LaTeX. To adress this issue, I eventually switched from LaTeX to XeLaTeX to use OpenType fonts freely for text and math. This document, however, is about LaTeX or applicable to both LaTeX and XeLaTeX unless exlicitly specified. A separate discussion about font setting in XeTeX is included as well. 
 
-Before diving in TeX detail, I have a comment. This post is not a comprehensive guide on styling, but a mere collection of random notes. 
+Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) I would also like to strees the importance of following a style guide. There are few comprehensive style guides out there. Choose one and stick to it. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge releif whenever in doubt. There is also a pletora of very good websites to search for writing tips that you don't find in an style guide. I extensively used [english.stackexchange.com](https://english.stackexchange.com/) and [tex.stackexchange.com](https://tex.stackexchange.com/).
 
-Ideally you should have a well constructed LaTeX template to start with and do not worry about anything else. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive person! I would like to strees the importance of following a style guide. There are few comprehensive style guides out there, but only use one of them. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not need to read it cover to cover, but having a style book on my desk while writing my dissertation a tremendous help to check whenever in doubt. And if you are still in doubt, do some googling. A valuable resource for me was [english.stackexchange.com](https://english.stackexchange.com/).
 
 ##  Fonts 
 A short excuse before we start. To keep things simple, the word `font` is used loosely in this document, and interchangably with word `typeface`. 
@@ -210,9 +208,10 @@ Use this for list of symbols and acronyms
 ## Better PDF
 
 
-Standard PDF:
+### Standard PDF
 	\usepackage[x-1a]{pdfx}
-    
+ 
+ ### Vector Graphics
  Use only vector graphics. SVG, PSD, and PDF formats work best as importing vector graphics.
  You can also craete impressive things inside TeX if you are patient.
  
@@ -222,7 +221,7 @@ Standard PDF:
 If you want to have a navigation pane for your long PDF, then use `hyperref`. But not that, this package is notorious for causing issues.
 	\usepackage[pdfpagelabels]{hyperref}
     
-    
+### Paper size, margins, etc.
 	
 
 	
