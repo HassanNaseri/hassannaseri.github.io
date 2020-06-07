@@ -1,7 +1,8 @@
 ---
 published: false
 ---
-## A New Post
+
+I decided to post some of the funniest jokes that I encountered over time :D. These are copied from other places.
 
 In an interview with David Letterman, Carter passed along an anecdote of a translation problem in Japan. Carter was speaking at a business lunch in Tokyo, where he decided to open his speech with a brief joke.
 
