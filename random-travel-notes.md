@@ -1,3 +1,17 @@
+
+2020 is an strange year to write travel notes, as the year started with an almost global lockdown due to an strange virus killing humans.
+
+Over the years, I made some travel notes before visiting places. Things that I wanted to do. I decided to publish tghem here. In a hope of being able to travel again. This is not an extensive list, but just what I found at random places in my computer.
+
+
+## Portugal
+
+Marinha Beach -- Praia da Marinha
+
+Lagos:
+Camilo Beach -- Praia do Camilo
+The walls of the ancient town of Lagos
+
 ## Shanghai
 >>>>>> Hangzhou <<<<<<<
 
@@ -65,4 +79,3 @@ No.265,Fangbangzhong Road
 
 Tea
 Mooncake
-
