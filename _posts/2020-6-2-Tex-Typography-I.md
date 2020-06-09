@@ -10,15 +10,26 @@ Before diving into TeX detail, I need to emphasize that this post is not a compr
 
 
 ##  Fonts 
-A short excuse before we start. To keep things simple, the word `font` is used loosely in this document, and interchangably with word `typeface`. 
+A short excuse before we start. To keep things simple, the word `font` is used loosely in this document, and interchangably with word `typeface`. TeX has two main fornt families used for text `Serif` and `Non Serif`. There is also `Type Writer` family. For math typesetting, there is normal math font and `Math Caligraphy` font. Other font shapes might be also used in math, including `Math Blackboard` and `Math Script`. Ideally all these font families should have matching shapes. That is, they have relatively simillar size, weight and shape, so they complement each other. 
 
-TeX has two main fornt families used for text 'Serif' and 'Non Serif'. There is also 'Type Writer' family. For math environment, there is normal math font and 'Match Caligraphy' font. Other font shapes might be also used in math, including 'Math Blackboard' and 'Math Script'. Ideally all these font families should have matching shapes. Matching menas that they have relatively simillar size, weight and shape, such that they look to complement each other. 
+To me, the foremost feature of good typesetting is consistency, which cannot be achieved without  matching fonts throughout the whole document. One can write a whole book with perfect tyepsetting using only one font, but it is hard to compose a good document with a handfull of different fonts. 
 
-To me, the foremost component of typesetting is the consistent use of matching fonts throughout the document. One can write a whole book with perfect tyepsetting using only one font, but it is hard to compose a profesional looking document with a handfull of fonts. 
+When a standard TeX templates is used, the [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) family of typefaces (actually the updated `Latin Modern`) gets applied by default. It comes with matching shapes for serif, non-serif, typewriter, math, etc., and guarantees an almost perfect typesetting for all text and math throughout the document.
 
-If a basic TeX template is used the default font/typeface is Computer Modern. This has matching fonts for all font families.
+### The Problem
+TeX has a quite sophisticated font system `Metafont`, created alongside TeX itself. It creates scalable fonts with non-rivaled typesetting features. However, there are only few fonts with extensive symbols to choose from. In fact, any font other than `Computer Modern` may come with some sacrifices or complications somewhere if you start nit picking. The introduction of TrueType and OpenType fonts, made scalable and good looking fonts available for a much wider range of applications. However, standard TeX cannot easily use such fonts and even if used it does not guarantee the professional typesetting that you expect from TeX out of the box. Hence, the problem arises when you want or asked to use a font other than `Computer Modern` and you still want a comparable quality for typesetting text and more critically math equation.
 
-### Better Math
+There are two solutions, a) switch from TeX/LaTeX to something newer like XeTeX or LuaTeX, b) be lucky and find a very good LaTeX package for the font that you want and workaround remaining issues. In this post we are covering the second option. 
+
+### Times Font
+Most font packages for LaTeX will not give you the quality of typesetting that you get with default fonts. However, there are few good packages as well. If you wish to typeset your document with `Times New Modern`, because you want to be different, then there is a good option for you. The [newtx](https://ctan.org/pkg/newtx?lang=en) package has exceptionally good text and math typesetting for `Times New Roman` family of fonts. The actual serif font in `newtx` is a modified version of Adobe Times. It has all the maths symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a matching monospace (typewriter) set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text. Here is how to load `newtx` for text and math.
+
+	\usepackage{newtxtext} % newtx Times font for text
+	\usepackage[cmintegrals,cmbraces,vvarbb]{newtxmath}  % newtx Times font for math
+
+The second line loads `newtxmath` for math, but uses integral and brace symbols from Computer Modern font for better typesetting if you prefer them. The order in which you load packages is important. For example you may need to load `newtxmath` after `AMS` packages (discussed next) to make sure that you end up with correct font setting.
+
+### Better Math and More Symbols
 Use `AMS` packages.
 
     % AMS packages
@@ -29,21 +40,7 @@ Note that we load `mathtools` instead of `amsmath` to fix some minor issues.
     \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
 
 There are plenty of other packages for example `nicefrac` creates better looking fractions.
-
-### Times Font
-The `newtx` package has exceptionally good text and math typesetting for `Times New Roman` family of fonts. It is comparable to the default Computer Modern font in terms of typesetting quality.
-
-	\usepackage{newtxtext} % newtx Times font
-	\usepackage[cmintegrals,cmbraces,vvarbb]{newtxmath}  % newtx Times font, math symbols
-
-The actual serif font is a modified version of Adobe Times. It has all the maths symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a monospace set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text.
-
-The order in which you load packages is important. For example you may need to load `newtxmath` after `AMS` to make sure that you end up with correct font setting.
-
-
-
-### More Math Alphabet
-
+ 
 	\usepackage[scr=rsfso]{mathalfa}
     \usepackage{textcomp} % more symbols
 
