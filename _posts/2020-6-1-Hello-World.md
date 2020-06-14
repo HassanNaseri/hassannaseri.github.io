@@ -18,7 +18,7 @@ I started my work in ICT sector as a web developer long time ago. Now I ahve Ph.
 
 I include a random image for testing! This is the art from the cover page of my Ph.D dissertation.
 
-![Dissertation cover image ... ](images/first-post.png)
+![Dissertation cover image ... ](/images/8round.jpg)
 
 
 

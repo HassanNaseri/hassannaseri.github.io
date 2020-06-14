@@ -18,8 +18,8 @@ html {
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
+  background: $bgcolor;
+  font: 18px/1.4 $body-font;
   color: $darkGray;
 }
 
@@ -30,9 +30,10 @@ body {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+h1, h2, h3, h4, h5, h6 { 
+  font-family: $header-font;
   color: $darkerGray;
+  //color: $fuschia;
   font-weight: bold;
 
   line-height: 1.7;
@@ -69,11 +70,14 @@ p {
 }
 
 a {
-  color: $blue;
+  //color: $blue;
+  color: $fuschia;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    //color: $blue;
+    color: $fuschia;
+    
   }
 }
 
@@ -156,7 +160,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $lightFuschia;
 
   @include mobile {
     text-align: center;
@@ -195,7 +199,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: $header-font;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -214,7 +218,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: $header-font;
   font-size: 18px;
 
   @include mobile {
@@ -233,7 +237,8 @@ nav {
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      //color: $blue;
+      color: $fuschia;
     }
   }
 }
@@ -244,7 +249,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $lightFuschia;
 }
 
 .posts > .post:last-child {
@@ -255,7 +260,7 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid $lightFuschia;
     padding: 0.1em 1em;
     color: $gray;
     font-size: 22px;

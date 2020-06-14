@@ -3,8 +3,12 @@
 // VARIABLES
 //
 
+@import "/fonts/LinLibertine/font.css";
+
 // Colors
 $blue: #4183C4;
+$fuschia: #BA4B9A;
+$lightFuschia: rgb(182, 120, 164);
 
 // Grays
 $black: #000;
@@ -12,12 +16,19 @@ $darkerGray: #222;
 $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
-$white: #fff;
+
+//$bgcolor: #F3ECE2;
+//$bgcolor: #F1F0EB;
+$bgcolor: #E2E1DE;
+
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+
+$body-font: "Linux Libertine", Times, "Times New Roman", serif;
+$header-font: "Linux Biolinum", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Mobile breakpoints
 @mixin mobile {

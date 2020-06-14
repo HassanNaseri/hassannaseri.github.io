@@ -3,6 +3,24 @@ published: false
 ---
 ## Tex-Typography-II
 
+## Better PDF
+
+
+### Standard PDF
+	\usepackage[x-1a]{pdfx}
+ 
+ ### Vector Graphics
+ Use only vector graphics. SVG, PSD, and PDF formats work best as importing vector graphics.
+ You can also craete impressive things inside TeX if you are patient.
+ 
+	\usepackage{tikz}
+	\usetikzlibrary{arrows,calc,positioning}   
+
+If you want to have a navigation pane for your long PDF, then use `hyperref`. But not that, this package is notorious for causing issues.
+	\usepackage[pdfpagelabels]{hyperref}
+    
+### Paper size, margins, etc.
+
 ### XeTeX
 
 	
