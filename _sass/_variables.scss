@@ -8,7 +8,7 @@
 // Colors
 $blue: #4183C4;
 $fuschia: #BA4B9A;
-$lightFuschia: rgb(182, 120, 164);
+$lightFuschia: rgb(197, 164, 187);
 
 // Grays
 $black: #000;
@@ -29,6 +29,7 @@ $georgia: Georgia, serif;
 
 $body-font: "Linux Libertine", Times, "Times New Roman", serif;
 $header-font: "Linux Biolinum", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-font: "Linux Libertine Mono", 'Bitstream Vera Sans Mono','Courier', monospace;
 
 // Mobile breakpoints
 @mixin mobile {
