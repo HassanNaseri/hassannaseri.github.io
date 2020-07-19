@@ -4,15 +4,17 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I started my work in ICT sector as a web developer long time ago. Now I ahve Ph.D. in Signal Processing.
 
 
-Some information about you!
+### I am a real Doctor!
 
-### More Information
+This is the cover of my dissertation, and the reason why this weblog ended up in fuchsia colors.
 
-A place to include any other types of information that you'd like to include about yourself.
+<a href="https://aaltodoc.aalto.fi/handle/123456789/30615">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/isbn9789526079141.png" alt="Dissertation cover" width="250" />
+</a>
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+hassan.nasseri at gmail dot com

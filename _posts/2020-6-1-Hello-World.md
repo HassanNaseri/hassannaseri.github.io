@@ -15,10 +15,6 @@ I used GitHub to host the blog and automatically build Jekyll webiste. This is n
 
 
 ## Short Bio
-I started my work in ICT sector as a web developer long time ago. Now I ahve Ph.D. in Signal Processing.
-
-I include a random image for testing! This is the art from the cover page of my Ph.D dissertation.
-
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/isbn9789526079141.png" alt="Dissertation cover" width="250" />
+I also wrote a short [bio of myslef](/about).
 
 

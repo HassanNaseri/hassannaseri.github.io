@@ -60,19 +60,19 @@ Note that we load `mathtools` instead of `amsmath` to fix some minor issues. The
 Different shapes/styles of a font are accessible using the commands `\textit{}`, `\textbf{}`, and `\textsc{}` or using
     {% highlight tex %}
     {% raw %}
-    {\itshape ...},
-    {\bfseries ...},
-    {\scshape ...}.
+    {\itshape ...} # Italic shape
+    {\bfseries ...} # Bold shape
+    {\scshape ...} # Small caps
     {% endraw %}
     {% endhighlight %}
-In order to use these commnads, one needs to have a corresponding font shape available. However, most fonts don't include all the comibinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package [slantsc](https://ctan.org/pkg/slantsc?lang=en) enables the use of them. Bold or bold slanted shapes of symbols may be particularly important for math typesetting. If some symbols don't have bold shape, then a fake bold symbol may be created by just increasing the weight of a normal one. You may use the package [bm](https://ctan.org/pkg/bm?lang=en) to do so. However, this should be only used very sparingly, and certainly not for body text. 
+In order to use these commnads, one needs to have a corresponding font shape available. However, most fonts don't include all the comibinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package [slantsc](https://ctan.org/pkg/slantsc?lang=en) enables the use of them. 
 
+Bold shapes of symbols may be particularly important for math typesetting. If some symbols don't have bold shape, then a fake bold symbol may be created by just increasing the weight of a normal glyph. You may use the package [bm](https://ctan.org/pkg/bm?lang=en) to do so. However, this should be only used very sparingly, and certainly not for body text. 
     {% highlight tex %}
     {% raw %}
     \usepackage{bm} % poor man's bold	
     {% endraw %}
     {% endhighlight %}
-
 
 
 ### Upright Bold Greek Letters
@@ -99,8 +99,11 @@ For some reason LaTeX does not have upright greek letters, they are all italic. 
 ## Spacing, Kerning, and Microtypography
 
 The most amazing LaTeX package that automatically solves your microtypography concerns in [microtype](https://ctan.org/pkg/microtype?lang=en). It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packkages). 
-
+    {% highlight tex %}
+    {% raw %}
 	\usepackage[protrusion=true,expansion=true]{microtype}
+    {% endraw %}
+    {% endhighlight %}
 
 ### Text Spacing, Hyphenation, and Line Breaks
 
@@ -108,9 +111,13 @@ Correct spacing between symbols, words and sentences is a key component of good 
 
 I prefer to have follwing commands in the preamble (before `\begin{document}` where you load all other packages) to tweek sentence spacing and hyphenation.
 
+    {% highlight tex %}
+    {% raw %}
 	\frenchspacing
 	\usepackage{impnattypo}
 	\setlength{\emergencystretch}{1em}
+    {% endraw %}
+    {% endhighlight %}
 
 If you need some ragged text in your document, for example in certain environments, then load [ragged2e](https://ctan.org/pkg/ragged2e?lang=en) package as well. It gives you some flexible and tunable ragged text environments.
 
@@ -127,6 +134,17 @@ Similarly, the follwing command doubles the line spacing in `split` and `align` 
 	
 	\setlength{\jot}{8pt} % for split environment	
 
+More detailed spacing. If you want to only reduce the spacing in inline math without affecting display math mode. 
+
+    {% highlight tex %}
+    {% raw %}
+    \everymath{
+        \thinmuskip=0.5\medmuskip
+        \medmuskip=0.5\medmuskip
+        \thickmuskip=0.5\thickmuskip
+    }
+    {% highlight tex %}
+    {% raw %}
 
 ## Floats
 You probably use `graphicx` to include images.
@@ -193,13 +211,18 @@ Use BibTeX or Biber
 ### Acronyms and Glosaries
 Use this for list of symbols and acronyms
 
-	{% highlight tex %}
-	{% raw %}
-	\usepackage[acronym,shortcuts,nowarn,smallcaps]{glossaries}
-	\glsdisablehyper
-	\makeglossaries
+    {% highlight tex %}
+    {% raw %}
+    \usepackage[acronym,shortcuts,nowarn,smallcaps]{glossaries}
+    \glsdisablehyper
+    \makeglossaries
+    \immediate\write18{makeglossaries \jobname} % run (pdf)latex twice with --shell-escape
+    \makeglossaries
 	{% endraw %}
 	{% endhighlight %}
+
+This uses small caps, if you want normal caps for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.
+    \renewcommand{\glsnamefont}[1]{\MakeUppercase{#1}}
 
 	{% highlight tex %}
 	{% raw %}
@@ -223,6 +246,12 @@ Use this for list of symbols and acronyms
 	\renewcommand*{\acronymfont}[1]{\mbox{#1}}
 	{% endraw %}
 	{% endhighlight %}
+
+    \usepackage{soul}
+    \usepackage[acronym,shortcuts=ac]{glossaries-extra}
+    \makeglossaries
+    \renewcommand{\glsabbrvscfont}[1]{\textsc{\MakeTextLowercase{\caps{#1}}}}
+    \setabbreviationstyle[acronym]{long-short-sc}
 
 ## Lists
 
