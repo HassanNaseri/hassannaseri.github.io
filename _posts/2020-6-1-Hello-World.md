@@ -1,20 +1,20 @@
 ---
 published: true
 ---
-Over the years I have been setting up many weblogs and CMSs for differet people. For example, I remember when WordPress came out and everyone was asking to migrate. In this process, I created few blogs for myslef as well. But none of them survived beyong couple of posts. Few days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, that sounded like a good subject for a blog post. I also encountered an Ad from GoDaddy for 2$ domain registration. It also sounded fun to try a random domain name by sparing $2. I went on and registered "randomdoctopr.com". So everything came together to start yet another blog. Hopefully this will last for a while :)
+Over the years I have been setting up many weblogs and CMS sites for people. When WordPress came out and everyone was migrating there, I also created a blog for myself. I did so with Drupal and few other platforms, but none of those weblogs survived beyond couple of posts. You see the catch here, the focus has been on tech rather than the content. Few days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, which looked like a good material for publishing. Seeing an Ad from GoDaddy for 2$ domain registration completed the picture. I registered "randomdoctor.com" and started yet another blog. Hopefully this one will last for a while :)
 
 
 ## Blog  Setup
-I used GitHub to host the blog and automatically build Jekyll webiste. This is nicely done with GitHub Pages. I followed the instructions given [in this well written blog post](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/). Afterwards, I installed Jekyll on my MacBook, and started experimenting with it on local machine. All in all, I liked this exercise very much :). Here are some note regarding my experince.
+I used GitHub to host the blog. GitHub Pages is magical in its automatic building of Jekyll websites. I followed the instructions given [in this well written blog post](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/). Afterwards, I installed Jekyll on my MacBook, and started experimenting with it locally. All in all, I liked this exercise very much :). Here are some notes regarding my experience.
 
-- The use of MarkDown language for tech. blogging is awesome. I like the easy and nice typesetting for text, code, and math formulas. 
+- The use of MarkDown language for technology/science blogging is awesome. I enjoy its easy and nice typesetting for text, code, and math formulas. 
 - Jekyll is many times better than WordPress if you want a simple weblog. It is minimal; The workflow is sophisticated; and you have great control over everything.
-- DNS setup was not very smooth. I used CNAME, but could not set it for the root of the domain. So, started with subdomain of blog.randomdoctor.com until I find time to sort out the rest.
-- Jekyll is a miracle when used on local machine. After you execute `bundle exec jekyll serve`, then any change that you make to your files  almost instantly shows up in your website (jekyll automatically updates the site). This is specially important when styling your website.
-
+- Despite being quick to setup, it is highly customizable and extendible through plugins. 
+- DNS setup was not very smooth, but I finally managed to read [this guide](https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site) and configure the apex for "randomdoctor.com".
+- Jekyll works like a magic when installed on local machine. You run `bundle exec jekyll serve`, then your changes instantly appear online. This is specially important when styling the website.
 
 
 ## Short Bio
-I also wrote a short [bio of myslef](/about).
+I also wrote a short [bio of myself](/about).
 
 
