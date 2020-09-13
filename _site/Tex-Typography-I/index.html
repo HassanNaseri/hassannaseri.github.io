@@ -298,28 +298,34 @@ Use BibTeX or Biber
 	
 	</code></pre></figure>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\usepackage{soul}
-\usepackage[acronym,shortcuts=ac]{glossaries-extra}
-\makeglossaries
-\renewcommand{\glsabbrvscfont}[1]{\textsc{\MakeTextLowercase{\caps{#1}}}}
-\setabbreviationstyle[acronym]{long-short-sc}
-</code></pre></div></div>
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="p">{</span>soul<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="na">[acronym,shortcuts=ac]</span><span class="p">{</span>glossaries-extra<span class="p">}</span>
+    <span class="k">\makeglossaries</span>
+    <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\glsabbrvscfont</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\textsc</span><span class="p">{</span><span class="k">\MakeTextLowercase</span><span class="p">{</span><span class="k">\caps</span><span class="p">{</span>#1<span class="p">}}}}</span>
+    <span class="k">\setabbreviationstyle</span><span class="na">[acronym]</span><span class="p">{</span>long-short-sc<span class="p">}</span>
+    
+	</code></pre></figure>
 
 <h2 id="lists">Lists</h2>
+<p>The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may reffer to a style manual for details. Here, we just consider typesetting options in tex, and recmmend the use of <code class="language-plaintext highlighter-rouge">enumitem</code> package. With <code class="language-plaintext highlighter-rouge">enumitem</code> you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\usepackage[inline]{enumitem}
-\setlist{nolistsep}
+<p>The follwing code creates the list style <code class="language-plaintext highlighter-rouge">hang</code> for block lists that are hanging from a paragraph with small separation, the style <code class="language-plaintext highlighter-rouge">alph</code> and <code class="language-plaintext highlighter-rouge">Alph</code> for lists with alphabetical labels, and a new environment <code class="language-plaintext highlighter-rouge">Ienum</code> for inline lists with short phrase. If long phrase or sentences are use in inline list, the puncuation would be different.</p>
 
-\usepackage[shortlabels, inline]{enumitem}
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+	<span class="k">\usepackage</span><span class="na">[shortlabels, inline]</span><span class="p">{</span>enumitem<span class="p">}</span>
+    <span class="k">\setlist</span><span class="p">{</span>nolistsep<span class="p">}</span>
+	<span class="k">\SetEnumitemKey</span><span class="p">{</span>hang<span class="p">}{</span>topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+		leftmargin=!, labelindent=<span class="k">\parindent</span>+1em, labelsep=0.5em, labelwidth=1em<span class="p">}</span>
+	<span class="k">\SetEnumitemKey</span><span class="p">{</span>alph<span class="p">}{</span>label=<span class="k">\emph</span><span class="p">{</span><span class="k">\alph*</span><span class="p">}</span><span class="k">\textbf</span><span class="p">{</span>.<span class="p">}}</span>
+	<span class="k">\SetEnumitemKey</span><span class="p">{</span>Alph<span class="p">}{</span>label=<span class="k">\emph</span><span class="p">{</span><span class="k">\Alph*</span><span class="p">}</span><span class="k">\textbf</span><span class="p">{</span>.<span class="p">}}</span>
+    <span class="k">\newenvironment</span><span class="p">{</span>Ienum<span class="p">}{</span><span class="nt">\begin{enumerate*}</span>[label=(<span class="k">\roman*</span>), itemjoin=<span class="p">{{</span>, <span class="p">}}</span>, itemjoin*=<span class="p">{{</span>, and <span class="p">}}</span>]<span class="p">}</span><span class="c">%</span>
+<span class="p">{</span><span class="nt">\end{enumerate*}</span><span class="p">}</span>
+    
+	</code></pre></figure>
 
-\SetEnumitemKey{midsep}{topsep=5pt, partopsep=1pt, parsep=1pt, itemsep=5pt}
-\SetEnumitemKey{hang-1}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
-	leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
-\SetEnumitemKey{hang-2}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt,
-	leftmargin=!, labelindent=\parindent, labelsep=0.5em, labelwidth=\parindent}
-\SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
-\SetEnumitemKey{Alph}{label=\emph{\Alph*}\textbf{.}}
-</code></pre></div></div>
+<h2 id="to-be-continued">To be Continued</h2>
+<p>This post covered the essential stuff in LaTeX. There will be a next part covering XeTeX and a long list of custom settings and definitions.</p>
 
 
   </div>

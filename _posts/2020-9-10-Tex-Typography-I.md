@@ -247,30 +247,38 @@ This uses small caps, if you want normal caps for the glossaries list and still 
 	{% endraw %}
 	{% endhighlight %}
 
+    {% highlight tex %}
+    {% raw %}
     \usepackage{soul}
     \usepackage[acronym,shortcuts=ac]{glossaries-extra}
     \makeglossaries
     \renewcommand{\glsabbrvscfont}[1]{\textsc{\MakeTextLowercase{\caps{#1}}}}
     \setabbreviationstyle[acronym]{long-short-sc}
+    {% endraw %}
+	{% endhighlight %}
 
 ## Lists
+The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may reffer to a style manual for details. Here, we just consider typesetting options in tex, and recmmend the use of `enumitem` package. With `enumitem` you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style. 
 
-	\usepackage[inline]{enumitem}
-	\setlist{nolistsep}
+The follwing code creates the list style `hang` for block lists that are hanging from a paragraph with small separation, the style `alph` and `Alph` for lists with alphabetical labels, and a new environment `Ienum` for inline lists with short phrase. If long phrase or sentences are use in inline list, the puncuation would be different. 
 
+    {% highlight tex %}
+    {% raw %}
 	\usepackage[shortlabels, inline]{enumitem}
-
-	\SetEnumitemKey{midsep}{topsep=5pt, partopsep=1pt, parsep=1pt, itemsep=5pt}
-	\SetEnumitemKey{hang-1}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+    \setlist{nolistsep}
+	\SetEnumitemKey{hang}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
 		leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
-	\SetEnumitemKey{hang-2}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt,
-		leftmargin=!, labelindent=\parindent, labelsep=0.5em, labelwidth=\parindent}
 	\SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
 	\SetEnumitemKey{Alph}{label=\emph{\Alph*}\textbf{.}}
+    \newenvironment{Ienum}{\begin{enumerate*}[label=(\roman*), itemjoin={{, }}, itemjoin*={{, and }}]}%
+{\end{enumerate*}}
+    {% endraw %}
+	{% endhighlight %}
 
 
+## To be Continued
+This post covered the essential stuff in LaTeX. There will be a next part covering XeTeX and a long list of custom settings and definitions.
 
-	
 
 	
 
