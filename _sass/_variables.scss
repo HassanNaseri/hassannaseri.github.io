@@ -5,6 +5,10 @@
 
 @import "/fonts/LinLibertine/font.css";
 
+// Adobe fonts
+@import "https://use.typekit.net/gry8neq.css";
+
+
 // Colors
 $blue: #4183C4;
 $fuchsia: #BA4B9A;
@@ -27,9 +31,12 @@ $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
-$body-font: "Linux Libertine", Times, "Times New Roman", serif;
+$body-font: "adobe-caslon-pro", "Linux Libertine", Times, "Times New Roman", serif;
 $header-font: "Linux Biolinum", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $code-font: "Linux Libertine Mono", 'Bitstream Vera Sans Mono','Courier', monospace;
+
+
+
 
 // Mobile breakpoints
 @mixin mobile {

@@ -2,6 +2,7 @@
 /* MEYER RESET */
 /***************/
 @import url(/fonts/LinLibertine/font.css);
+@import "https://use.typekit.net/gry8neq.css";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,7 +67,7 @@ html {
 
 body {
   background: #E2E1DE;
-  font: 15px/1.2 "Linux Libertine", Times, "Times New Roman", serif;
+  font: 15px/1.2 "adobe-caslon-pro", "Linux Libertine", Times, "Times New Roman", serif;
   color: #333;
 }
 

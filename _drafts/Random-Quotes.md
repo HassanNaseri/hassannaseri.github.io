@@ -29,3 +29,7 @@ Don't believe in bullshit!
 – Aristotle
 
 
+
+Think horses not zebras when you hear Hooves sound.
+“When you hear hoofbeats, think of horses, not zebras” -- a popular medical proverb since about the 1950s.
+
