@@ -115,9 +115,9 @@ I prefer to have following commands in the preamble (before `\begin{document}` w
 
     {% highlight tex %}
     {% raw %}
-	\frenchspacing
-	\usepackage{impnattypo}
-	\setlength{\emergencystretch}{1em}
+    \frenchspacing
+    \usepackage{impnattypo}
+    \setlength{\emergencystretch}{1em}
     {% endraw %}
     {% endhighlight %}
 
@@ -163,24 +163,24 @@ Floats include figures, tables, and other blocks such as code listings that are 
 ### Figures
 We typically use `graphicx` to include figures in the document. In addition to `graphicx`, the following packages are also very helpful in typesetting figures. You may check `subcaption` package documentations for more details.
 
-	{% highlight tex %}
-	{% raw %}
-	\usepackage{float}
-	\usepackage{dblfloatfix}
-	\usepackage{wrapfig}
-	\usepackage[format=plain]{caption}
-	\usepackage{subcaption}
-	\captionsetup[subfigure]{justification=centering}
+    {% highlight tex %}
+    {% raw %}
+    \usepackage{float}
+    \usepackage{dblfloatfix}
+    \usepackage{wrapfig}
+    \usepackage[format=plain]{caption}
+    \usepackage{subcaption}
+    \captionsetup[subfigure]{justification=centering}
     {% endraw %}
-	{% endhighlight %}
+    {% endhighlight %}
 
 If you have an old template that is not compatible with `subcaption` you may use `subfig` package instead.
 
-	{% highlight tex %}
-	{% raw %}
-	\usepackage[caption=false,font=footnotesize]{subfig}
+    {% highlight tex %}
+    {% raw %}
+    \usepackage[caption=false,font=footnotesize]{subfig}
     {% endraw %}
-	{% endhighlight %}
+    {% endhighlight %}
 
 ### Tables
 The most advanced and flexible tool for typesetting tables is the `tabu` package. It has an extensive documentation. In addition you may need `multirow` and `multicol` for more complex table structures.
@@ -201,30 +201,30 @@ I recommend defining one table style and sticking to it for consistency. We will
 For verbatim listings, e.g. code snippets, you can use the `listings` package. It provides code highlighting as well. 
 For typesetting pseudocode, you can load `algorithmicx` with `algpseudocode` as follows. It provides the `algorithm` environment for pseudocode. The label of the environment is changed to 'Table', as we would like to refer to such blocks as tables. You may check the syntax in the documentation of `algorithmicx` package.
 
-	{% highlight tex %}
-	{% raw %}
+    {% highlight tex %}
+    {% raw %}
     \usepackage{algorithm}
-	\usepackage[noend]{algpseudocode}
-	\floatname{algorithm}{Table}
-  	{% endraw %}
-	{% endhighlight %}  
+    \usepackage[noend]{algpseudocode}
+    \floatname{algorithm}{Table}
+    {% endraw %}
+    {% endhighlight %}  
 
 In the following, we load `algorithm2e` package for fancy typesetting of `algorithm` environment. There are also color setting with `xcolor` package, font setting, and more styling details that you may adjust to your needs.
 
-	{% highlight tex %}
-	{% raw %}
-	\colorlet{commentColor}{Gray!60!black}%
-	\usepackage[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]{algorithm2e}%
-	\newcommand\mycommfont[1]{\ttfamily\bfseries\textcolor{commentColor}{#1}}%
-	\SetCommentSty{mycommfont}%
-	\renewcommand{\algorithmcfname}{Table}%
-	\SetAlgoBlockMarkers{}{}%
-	\SetKwProg{Fn}{}{\{}{}%
-	\SetEndCharOfAlgoLine{}%
-	\DontPrintSemicolon%
-	\SetNlSty{}{}{:}%
-	{% endraw %}
-	{% endhighlight %}
+    {% highlight tex %}
+    {% raw %}
+    \colorlet{commentColor}{Gray!60!black}%
+    \usepackage[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]{algorithm2e}%
+    \newcommand\mycommfont[1]{\ttfamily\bfseries\textcolor{commentColor}{#1}}%
+    \SetCommentSty{mycommfont}%
+    \renewcommand{\algorithmcfname}{Table}%
+    \SetAlgoBlockMarkers{}{}%
+    \SetKwProg{Fn}{}{\{}{}%
+    \SetEndCharOfAlgoLine{}%
+    \DontPrintSemicolon%
+    \SetNlSty{}{}{:}%
+    {% endraw %}
+    {% endhighlight %}
 
 
 ## References
@@ -237,25 +237,25 @@ However, instead of using `\label` command, we use specific packages to manage t
 ### Bibliography
 Use BibTeX or Biber for your bibliography along with the `cite` package. You need to have a separate style for your reference list. The following example is for BibTeX with `IEEEtran` style. This needs a copy of `IEEEtran.bst` file in your working directory.
 
-	{% highlight tex %}
-	{% raw %}
-	\usepackage{cite}
-	\let\labelindent\relax % needed for compatibility with IEEtran
-	\renewcommand\citeleft{{\small[}}
-	\renewcommand\citeright{{\small]}} 
-	\bibliographystyle{IEEEtran}
-	\usepackage{url}
-	{% endraw %}
-	{% endhighlight %}
+    {% highlight tex %}
+    {% raw %}
+    \usepackage{cite}
+    \let\labelindent\relax % needed for compatibility with IEEtran
+    \renewcommand\citeleft{{\small[}}
+    \renewcommand\citeright{{\small]}} 
+    \bibliographystyle{IEEEtran}
+    \usepackage{url}
+    {% endraw %}
+    {% endhighlight %}
 
 You need to call `\bibliography{}` command with the name of your BibTex file where you want to place your bibliography list (typically at the end of the document).
 
-	{% highlight tex %}
-	{% raw %}
+    {% highlight tex %}
+    {% raw %}
     \renewcommand{\bibname}{References}
     \bibliography{my_biblio_db}
-	{% endraw %}
-	{% endhighlight %}
+    {% endraw %}
+    {% endhighlight %}
 
 
 ### Acronyms and Glossaries
@@ -265,22 +265,22 @@ Use `glossaries` package for list of symbols and acronyms.
     {% raw %}
     \usepackage[xindy,acronym,shortcuts,nowarn,nosuper,nonumberlist,smallcaps]{glossaries}
     \usepackage{glossary-longragged}
-	\usepackage{glossary-tree}
+    \usepackage{glossary-tree}
     \setacronymstyle{long-short}
     \glsdisablehyper
     \makeglossaries
     \immediate\write18{makeglossaries \jobname} % runs (pdf)latex twice with --shell-escape
     \makeglossaries
-	{% endraw %}
-	{% endhighlight %}
+    {% endraw %}
+    {% endhighlight %}
 
 This uses small caps for glossaries, if you want normal capital letters for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.
 
-	{% highlight tex %}
-	{% raw %}
+    {% highlight tex %}
+    {% raw %}
     \renewcommand{\glsnamefont}[1]{\MakeUppercase{#1}}
-	{% endraw %}
-	{% endhighlight %}
+    {% endraw %}
+    {% endhighlight %}
 
 ## Lists
 The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may refer to a style manual for details. Here, we just consider typesetting options in tex, and recommend the use of `enumitem` package. With `enumitem` you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style. 
@@ -289,15 +289,15 @@ As an example, the following code creates the list style `hang` for block lists 
 
     {% highlight tex %}
     {% raw %}
-	\usepackage[shortlabels, inline]{enumitem}
+    \usepackage[shortlabels, inline]{enumitem}
     \setlist{nolistsep}
-	\SetEnumitemKey{hang}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
-		leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
-	\SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
+    \SetEnumitemKey{hang}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+        leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
+    \SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
     \newenvironment{Ienum}{\begin{enumerate*}[label=(\roman*), itemjoin={{, }}, itemjoin*={{, and }}]}%
     {\end{enumerate*}}
     {% endraw %}
-	{% endhighlight %}
+    {% endhighlight %}
 
 
 ## To be Continued
