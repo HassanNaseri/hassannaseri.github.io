@@ -59,7 +59,6 @@ As seen above `newtx` comes in two packages for text and math. The second line l
 	
     {% highlight tex %}
     {% raw %}
-    % AMS packages
     \usepackage{mathtools,amsfonts,amssymb,amsthm}
     \interdisplaylinepenalty=2500 % after amsmath to restore bad page breaks
     {% endraw %}
@@ -104,7 +103,7 @@ The most impressive LaTeX package that automatically solves your microtypography
 
     {% highlight tex %}
     {% raw %}
-	\usepackage[protrusion=true,expansion=true]{microtype}
+    \usepackage[protrusion=true,expansion=true]{microtype}
     {% endraw %}
     {% endhighlight %}
 
