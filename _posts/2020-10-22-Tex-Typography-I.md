@@ -22,7 +22,7 @@ The second part will cover XeTeX together with a long list of custom settings an
  
 Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
 Moreover, this series is not about writing style, except for few tips. I would like to stress the importance of following a style guide for writing. There are few comprehensive style guides out there. Choose one and stick to it. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge relief whenever in doubt. 
-There are also many very good websites to search for or aks things that you don't find in a style guide. I extensively used [english.stackexchange.com](https://english.stackexchange.com/) and [tex.stackexchange.com](https://tex.stackexchange.com/).
+There are also many very good websites to search for or ask about things that you don't find in a style guide. I extensively used [english.stackexchange.com](https://english.stackexchange.com/) and [tex.stackexchange.com](https://tex.stackexchange.com/).
 
 
 ##  Fonts 
@@ -77,7 +77,7 @@ The following two packages might be loaded if you need additional math symbols t
 
 
 ### Bolds, Italics, Small Caps, etc.
-In LaTeX thre fifferent shapes/styles of a font are accessible using the commands `\textit{}`, `\textbf{}`, and `\textsc{}` or using
+In LaTeX, different shapes/styles of a font are accessible using the commands `\textit{}`, `\textbf{}`, and `\textsc{}` or using
 
     {% highlight tex %}
     {% raw %}
@@ -87,7 +87,7 @@ In LaTeX thre fifferent shapes/styles of a font are accessible using the command
     {% endraw %}
     {% endhighlight %}
 
-In order to use these, one needs to have a corresponding font shape available. However, most fonts don't include all the combinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package [slantsc](https://ctan.org/pkg/slantsc?lang=en) enables the use of them. 
+In order to use these, their corresponding font shapes must be available. However, most fonts don't include all the combinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package [slantsc](https://ctan.org/pkg/slantsc?lang=en) enables the use of them. 
 
 Bold shapes of symbols may be particularly important for math typesetting. If some symbols don't have bold shape, then a fake bold symbol may be created by just increasing the weight of a normal glyph. You may use the package [bm](https://ctan.org/pkg/bm?lang=en) to do so. However, this should be only used very sparingly, and certainly not for body text. 
 
@@ -98,30 +98,10 @@ Bold shapes of symbols may be particularly important for math typesetting. If so
     {% endhighlight %}
 
 
-### Upright Bold Greek Letters
-For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.
-
-    {% highlight tex %}
-    {% raw %}
-    \makeatletter
-    \def\changegreek{\@for\next:={%
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,%
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
-        \do{\expandafter\let\csname\next\expandafter\endcsname\csname\next up\endcsname}}
-    \def\changegreekbf{\@for\next:={%
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,%
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
-        \do{\expandafter\def\csname\next\expandafter\endcsname\expandafter{%
-        \expandafter\bm\expandafter{\csname\next up\endcsname}}}}
-    \makeatother
-    {% endraw %}
-    {% endhighlight %}
-
-
-
 ## Spacing, Kerning, and Microtypography
 
-The most amazing LaTeX package that automatically solves your microtypography concerns in [microtype](https://ctan.org/pkg/microtype?lang=en). It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packkages). 
+The most impressive LaTeX package that automatically solves your microtypography concerns is [microtype](https://ctan.org/pkg/microtype?lang=en). It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packages). 
+
     {% highlight tex %}
     {% raw %}
 	\usepackage[protrusion=true,expansion=true]{microtype}
@@ -130,9 +110,9 @@ The most amazing LaTeX package that automatically solves your microtypography co
 
 ### Text Spacing, Hyphenation, and Line Breaks
 
-Correct spacing between symbols, words and sentences is a key component of good typesetting. TeX is designed to solve this issue out of the box in an almost perfect manner. However, some fine tuning always help, specially if you use anything other than default Computer Modern font family. Hyphenation has also the same story. You can tweek it if you are not happy with what comes out of the box. Hyphenation is a delicate matter that keeps balance between how the words are aligned at the end of each row, and how fragmented the text looks like in each line. 
-
-I prefer to have follwing commands in the preamble (before `\begin{document}` where you load all other packages) to tweek sentence spacing and hyphenation.
+TeX is designed to create perfect spacing between symbols, words and sentences out of the box. However, some fine tuning always help, specially if you use anything other than default Computer Modern font. 
+The situation is the same with hyphenation. You may need to fine tune it to get perfect results. Hyphenation works delicately by keeping the balance between line justification, regularity of spacing, and word fragmentation.
+I prefer to have following commands in the preamble (before `\begin{document}` where you load all other packages) to adjust sentence spacing and hyphenation.
 
     {% highlight tex %}
     {% raw %}
@@ -142,28 +122,31 @@ I prefer to have follwing commands in the preamble (before `\begin{document}` wh
     {% endraw %}
     {% endhighlight %}
 
-If you need some ragged text in your document, for example in certain environments, then load [ragged2e](https://ctan.org/pkg/ragged2e?lang=en) package as well. It gives you some flexible and tunable ragged text environments.
+If you need some ragged text in your document, for example in certain environments, then load [ragged2e](https://ctan.org/pkg/ragged2e?lang=en) package. It gives you some flexible and tunable ragged text environments.
 
-We do not discuss letter spacing and [kerning](https://en.wikipedia.org/wiki/Kerning) here for two reasons. First, if you already know what is kkerning then you may not need this guide at all :), and second, those microtypographic details should be automatically handled by proper packages that you load, such as `microtype` and `newtx`.
+We do not discuss letter spacing and [kerning](https://en.wikipedia.org/wiki/Kerning) here for two reasons. First, if you already know what is kerning then you may not need this guide at all :), and second, such microtypographic details should be automatically handled by proper packages that you load, such as `microtype` and `newtx`.
 
 ### Math Spacing
-Good spacing in math is way more complex than text. No matter, how good your math packages are, there might be still room to apply your own modifications. You can pretty much adjust any type space that does not look good. Here I just give two examples to adjust vertical spacing.
+Perfect spacing in math equations is way more complex than text. No matter, how good LaTeX math packages are, there might be still room to apply your own modifications. You can adjust almost any spacing that does not look good. Here I  give few examples.
 
-You are most likely to use `array` environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. You can use the follwing command to strech that out:
+You may use `array` environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. The following command increases line spacing for arrays.
+
     {% highlight tex %}
     {% raw %}
     \renewcommand*{\arraystretch}{1.1} % for array/matrix environments
     {% endraw %}
 	{% endhighlight %}
 
-Similarly, the follwing command doubles the line spacing in `split` and `align` environments of `amsmath`:
+Similarly, the next command doubles the line spacing in `split` and `align` environments of `amsmath`.
+
     {% highlight tex %}
     {% raw %}	
     \setlength{\jot}{8pt} % for split environment	
     {% endraw %}
 	{% endhighlight %}
 
-More detailed spacing. If you want to only reduce the spacing in inline math without affecting display math mode. 
+The next example is for reducing the horizontal spacing in inline math without affecting display math mode. 
+
     {% highlight tex %}
     {% raw %}
     \everymath{
@@ -175,11 +158,11 @@ More detailed spacing. If you want to only reduce the spacing in inline math wit
 	{% endhighlight %}
 
 ## Floats
-Floats include figures, tables, and other blocks such as code listings that are floating in the documnet. That is, the exact location of them are determined by TeX. The floats will have reference in the text either as figure or table.
+Floats include figures, tables, and other blocks such as code listings that are floating in the document. That is, the exact location of them are determined by TeX. The floats will typically have references in the text either as figure or table.
 
 
 ### Figures
-We typically use `graphicx` to include figures in the document. In addition to `graphicx`, the follwing packages are also very helpfull in typesetting figures. You may check `subcaption` package documentations for more details.
+We typically use `graphicx` to include figures in the document. In addition to `graphicx`, the following packages are also very helpful in typesetting figures. You may check `subcaption` package documentations for more details.
 
 	{% highlight tex %}
 	{% raw %}
@@ -192,7 +175,8 @@ We typically use `graphicx` to include figures in the document. In addition to `
     {% endraw %}
 	{% endhighlight %}
 
-If you have an old template that is not compatible with `subcaption` you may use `subfig` instead.
+If you have an old template that is not compatible with `subcaption` you may use `subfig` package instead.
+
 	{% highlight tex %}
 	{% raw %}
 	\usepackage[caption=false,font=footnotesize]{subfig}
@@ -200,7 +184,7 @@ If you have an old template that is not compatible with `subcaption` you may use
 	{% endhighlight %}
 
 ### Tables
-The most advanced and flexible tool for typeseeting tables is the `tabu` package. It has an extensive documentation. In addition you may need `multirow` and `multicol` for more complex table structures.
+The most advanced and flexible tool for typesetting tables is the `tabu` package. It has an extensive documentation. In addition you may need `multirow` and `multicol` for more complex table structures.
 
 	{% highlight tex %}
 	{% raw %}
@@ -211,18 +195,25 @@ The most advanced and flexible tool for typeseeting tables is the `tabu` package
     {% endraw %}
 	{% endhighlight %}
 
-I highly recommned that you define one table style and stick to it for consistency. We will define some table styles in the next post of this series.
+I recommend defining one table style and sticking to it for consistency. We will define some table styles in the next post of this series.
 
 ### Other Environments
 
-For verbatim listings, e.g. code snippets, you can use the `listings` package. It provide code highlighting as well. In the follwing, we use `algorithm` and `algorithm2e` packages for fancy typesetting of algorithms and pseudocodes. The lebel of the environment is changed to 'Table', as we would like to reffer to such blocks as tables. There are also color setting, from `xcolor` package, font setting, and etc., that you may adjust to yuor needs.
+For verbatim listings, e.g. code snippets, you can use the `listings` package. It provides code highlighting as well. 
+For typesetting pseudocode, you can load `algorithmicx` with `algpseudocode` as follows. It provides the `algorithm` environment for pseudocode. The label of the environment is changed to 'Table', as we would like to refer to such blocks as tables. You may check the syntax in the documentation of `algorithmicx` package.
 
 	{% highlight tex %}
 	{% raw %}
- 	\usepackage{algorithm}
+    \usepackage{algorithm}
 	\usepackage[noend]{algpseudocode}
 	\floatname{algorithm}{Table}
+  	{% endraw %}
+	{% endhighlight %}  
 
+In the following, we load `algorithm2e` package for fancy typesetting of `algorithm` environment. There are also color setting with `xcolor` package, font setting, and more styling details that you may adjust to your needs.
+
+	{% highlight tex %}
+	{% raw %}
 	\colorlet{commentColor}{Gray!60!black}%
 	\usepackage[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]{algorithm2e}%
 	\newcommand\mycommfont[1]{\ttfamily\bfseries\textcolor{commentColor}{#1}}%
@@ -236,15 +227,16 @@ For verbatim listings, e.g. code snippets, you can use the `listings` package. I
 	{% endraw %}
 	{% endhighlight %}
 
+
 ## References
-You need to reffer to figures, tables, sections, equations, etc. in the text. All of such items need to be labeled for consistent reffering. Use prefix in your labels, e.g. `\label{sec:introduction}`. 
+We need to refer to figures, tables, sections, equations, etc. in the text. All instances of such objects need to be labeled for consistent referrences. Use prefix in your labels, e.g. `\label{sec:introduction}`. 
 This will greatly help if you decide to create lists of different objects, e.g. list of images. 
-The next level of cosistency can be acheived by creating macros for reffering to different objects, for example, `\Fig{myfig}` may print `Fig. 10`.
-In the follwoing, we discuss bibliography and acronyms. These are also labeled items that we reffer to them in the text. We also create lists of bibliography and acronyms. 
+The next level of consistency can be achieved by creating macros for referring to different objects, for example, `\Fig{myfig}` may print `Fig. 10`.
+In the following, we discuss bibliography and acronyms. These are also labeled items that we refer to them in the text. We also create lists of bibliography and acronyms. 
 However, instead of using `\label` command, we use specific packages to manage these. 
 
 ### Bibliography
-Use BibTeX or Biber for your bibliography along with the `cite` package. You need to have style for your refernce list. The following example is for BibTeX with `IEEEtran` style. You need to have a copy of `IEEEtran.bst` file in your working directory.
+Use BibTeX or Biber for your bibliography along with the `cite` package. You need to have a separate style for your reference list. The following example is for BibTeX with `IEEEtran` style. This needs a copy of `IEEEtran.bst` file in your working directory.
 
 	{% highlight tex %}
 	{% raw %}
@@ -267,7 +259,7 @@ You need to call `\bibliography{}` command with the name of your BibTex file whe
 	{% endhighlight %}
 
 
-### Acronyms and Glosaries
+### Acronyms and Glossaries
 Use `glossaries` package for list of symbols and acronyms.
 
     {% highlight tex %}
@@ -278,32 +270,23 @@ Use `glossaries` package for list of symbols and acronyms.
     \setacronymstyle{long-short}
     \glsdisablehyper
     \makeglossaries
-    \immediate\write18{makeglossaries \jobname} % run (pdf)latex twice with --shell-escape
+    \immediate\write18{makeglossaries \jobname} % runs (pdf)latex twice with --shell-escape
     \makeglossaries
 	{% endraw %}
 	{% endhighlight %}
 
-This uses small caps, if you want normal caps for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.
+This uses small caps for glossaries, if you want normal capital letters for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.
+
 	{% highlight tex %}
 	{% raw %}
     \renewcommand{\glsnamefont}[1]{\MakeUppercase{#1}}
 	{% endraw %}
 	{% endhighlight %}
 
-You can define new glossaries styles if for example the alignment or spacing of acronyms list is not perfrct. The package `glossaries-extra` provides more optuons and flexibility, especially if you have more than one abbrevation list (e.g. acronyms and symbols). The follwing is an example showing how you can use `setabbreviationstyle` command for each category of abbreviations that you have.
-
- 	{% highlight tex %}
-	{% raw %}   
-    \usepackage[acronym,shortcuts=ac]{glossaries-extra}
-    \renewcommand{\glsabbrvscfont}[1]{\textsc{\MakeTextLowercase{\caps{#1}}}}
-    \setabbreviationstyle[acronym]{long-short-sc}
-    {% endraw %}
-	{% endhighlight %}
-
 ## Lists
-The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may reffer to a style manual for details. Here, we just consider typesetting options in tex, and recmmend the use of `enumitem` package. With `enumitem` you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style. 
+The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may refer to a style manual for details. Here, we just consider typesetting options in tex, and recommend the use of `enumitem` package. With `enumitem` you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style. 
 
-The follwing code creates the list style `hang` for block lists that are hanging from a paragraph with small separation, the style `alph` for lists with alphabetical labels, and a new environment `Ienum` for inline lists with short phrase. If long phrase or sentences are use in inline list, the puncuation would be different. 
+As an example, the following code creates the list style `hang` for block lists that are hanging from a paragraph with small separation, the style `alph` for lists with alphabetical labels, and a new environment `Ienum` for inline lists with short phrase. If long phrase or sentences are used in inline list, the punctuation would be different. 
 
     {% highlight tex %}
     {% raw %}
@@ -319,7 +302,7 @@ The follwing code creates the list style `hang` for block lists that are hanging
 
 
 ## To be Continued
-This post covered the essential stuff in LaTeX. There will be a next part to this series covering XeTeX and a long list of custom settings and definitions. Stay tuned :)
+This post covered some essential typesetting subjects in LaTeX. There will be a next part from this series covering XeTeX and providing a long list of custom settings and definitions. Stay tuned :)
 
 
 	

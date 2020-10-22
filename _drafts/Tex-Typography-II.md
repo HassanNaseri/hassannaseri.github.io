@@ -21,6 +21,39 @@ If you want to have a navigation pane for your long PDF, then use `hyperref`. Bu
     
 ### Paper size, margins, etc.
 
+
+### Upright Bold Greek Letters
+For some reason LaTeX does not have upright greek letters; they are all italic.
+
+But there are upright versions `\upalpha, \upbeta, ...`
+
+ It is common in many disciplines to typeset vectors and matrices using upright bold symbols. So upright bold greek letters may prove very useful. The following code define helps with it.
+
+    {% highlight tex %}
+    {% raw %}
+    \makeatletter
+    \def\changegreek{\@for\next:={%
+        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
+        \do{\expandafter\let\csname\next\expandafter\endcsname\csname\next up\endcsname}}
+    \def\changegreekbf{\@for\next:={%
+        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi}%
+        \do{\expandafter\def\csname\next\expandafter\endcsname\expandafter{%
+        \expandafter\bm\expandafter{\csname\next up\endcsname}}}}
+    \makeatother
+    {% endraw %}
+    {% endhighlight %}
+
+
+	You can define new glossaries styles if for example the alignment or spacing of acronyms list is not perfect. The package `glossaries-extra` provides more options and flexibility, especially if you have more than one abbrevations/glossaries list (e.g. acronyms and symbols). The following example shows how to use `setabbreviationstyle` command for each category of abbreviations that you have.
+
+ 	{% highlight tex %}
+	{% raw %}   
+    \usepackage[acronym,shortcuts=ac]{glossaries-extra}
+    \renewcommand{\glsabbrvscfont}[1]{\textsc{\MakeTextLowercase{\caps{#1}}}}
+    \setabbreviationstyle[acronym]{long-short-sc}
+    {% endraw %}
+	{% endhighlight %}
+	
 ### XeTeX
 
 	
