@@ -6,11 +6,10 @@ But that template did not look right - sometimes I get obsessed with how things 
 Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
 Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D. 
 
-<div style="background: white; width: 80%; 
-            padding-left: 3px; padding-right: 3px; 
-            border: 2px #BA4B9A; border-style: dotted">
+<div style="width: 80%;
+            padding-left: 3px; padding-right: 3px;" >
 <a href="http://phdcomics.com/comics.php?f=1756">
-<img style="display: block" src="http://phdcomics.com/comics/archive/phd102914s.gif" alt="PHD Comic"/>
+<img style="display: block" src="/images/phd102914s.gif" alt="PHD Comic"/>
 </a>
 </div>
 

@@ -8,6 +8,10 @@
   //box-shadow: 3px 3px rgba(0,0,0,0.1);
   //margin: 10px 0 10px 0;
   overflow: scroll;
+  //margin-block-start: 0;
+  //margin-block-end: 0;
+  //margin-inline-start: 0;
+  //margin-inline-end: 0;
 }
 
 code {
@@ -15,6 +19,7 @@ code {
   font-family: $code-font;
   font-size: 13px;
   letter-spacing: -0.5px;
+  display: inline-block;
 }
 
 .highlight .c { color: #586E75 } /* Comment */

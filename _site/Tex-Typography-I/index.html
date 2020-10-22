@@ -33,9 +33,6 @@ Consequently, I spent same amount of time on styling as I spent on writing the a
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Adobe Fonts-->
-    <link rel="stylesheet" href="https://use.typekit.net/gry8neq.css">
-    
     <link rel="stylesheet" type="text/css" href="/style.css" />
     
     <link rel="alternate" type="application/rss+xml" title=" - Random Notes of a Technology Doctor!" href="/feed.xml" />
@@ -69,7 +66,7 @@ Consequently, I spent same amount of time on styling as I spent on writing the a
       <article class="post">
 
   <div class="date">
-    September 10, 2020
+    October 22, 2020
   </div>
 
   <h1>Tex Typography I</h1>
@@ -80,11 +77,10 @@ But that template did not look right - sometimes I get obsessed with how things 
 Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
 Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.</p>
 
-<div style="background: white; width: 80%; 
-            padding-left: 3px; padding-right: 3px; 
-            border: 2px #BA4B9A; border-style: dotted">
+<div style="width: 80%;
+            padding-left: 3px; padding-right: 3px;">
 <a href="http://phdcomics.com/comics.php?f=1756">
-<img style="display: block" src="http://phdcomics.com/comics/archive/phd102914s.gif" alt="PHD Comic" />
+<img style="display: block" src="/images/phd102914s.gif" alt="PHD Comic" />
 </a>
 </div>
 
@@ -95,7 +91,7 @@ The second part will cover XeTeX together with a long list of custom settings an
 
 <p>Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
 Moreover, this series is not about writing style, except for few tips. I would like to stress the importance of following a style guide for writing. There are few comprehensive style guides out there. Choose one and stick to it. <a href="https://www.chicagomanualofstyle.org/home.html">The Chicago Manual of Style</a> is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge relief whenever in doubt. 
-There are also many very good websites to search for or aks things that you don’t find in a style guide. I extensively used <a href="https://english.stackexchange.com/">english.stackexchange.com</a> and <a href="https://tex.stackexchange.com/">tex.stackexchange.com</a>.</p>
+There are also many very good websites to search for or ask about things that you don’t find in a style guide. I extensively used <a href="https://english.stackexchange.com/">english.stackexchange.com</a> and <a href="https://tex.stackexchange.com/">tex.stackexchange.com</a>.</p>
 
 <h2 id="fonts">Fonts</h2>
 <p>A quick disclaimer before we start: in order to keep things simple, the word “font” is used loosely in this document, and interchangeably with the word typeface. 
@@ -106,12 +102,14 @@ For math typesetting, there is normal math font and a math calligraphy font (kno
 If one of the default TeX templates is used, the <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a> family of typefaces (actually the updated Latin Modern) gets applied. It comes with matching shapes for serif, non-serif, typewriter, math, etc., and guarantees an almost perfect typesetting for all text and math throughout the document.</p>
 
 <h3 id="the-problem">The Problem</h3>
-<p>TeX has a quite sophisticated font system <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a>, created alongside TeX itself. It generates scalable fonts with non-rivaled typesetting features. However, there are only few fonts with extensive symbols to choose from. In fact, any font other than Computer Modern may come with some limitations or complications somewhere if you start nit picking. The introduction of TrueType and OpenType fonts, made scalable and good looking fonts available for a much wider range of applications. However, standard TeX cannot easily use such fonts and even if used it does not guarantee the professional typesetting that you expect from TeX out of the box. Hence, the problem arises when you want or asked to use a font other than Computer Modern and you still want a comparable quality for typesetting text and more critically math equation.</p>
+<p>TeX has quite a sophisticated font system <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a>, created alongside TeX itself. It generates scalable fonts with non-rivaled typesetting features. However, there are only few fonts with extensive symbols to choose from. 
+In fact, any font other than Computer Modern will show some limitations or complications if you start nit picking. The introduction of TrueType and OpenType fonts, made scalable and elegant fonts available to a much wider range of applications. However, standard TeX cannot easily use such fonts; and even if used it does not guarantee the professional typesetting that you expect from TeX out of the box. Hence, the problem arises when you want or asked to use a font other than Computer Modern but you still want a comparable quality for typesetting text and more critically math equations.</p>
 
 <p>There are two solutions, a) switch from TeX/LaTeX to something newer like XeTeX or LuaTeX, b) be lucky and find a very good LaTeX package for the font that you want and workaround remaining issues. In this post we are covering the second option.</p>
 
 <h3 id="times-font">Times Font</h3>
-<p>Most font packages for LaTeX will not give you the quality of typesetting that you get with default fonts. However, there are few good packages as well. If you wish to typeset your document with Times New Roman, because you want to be different, then there is a good option for you. The <a href="https://ctan.org/pkg/newtx?lang=en">newtx</a> package has exceptionally good text and math typesetting for Times New Roman family of fonts. The actual serif font in <code class="language-plaintext highlighter-rouge">newtx</code> is a modified version of Adobe Times. It has all the maths symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a matching monospace (typewriter) set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text. Here is how to load <code class="language-plaintext highlighter-rouge">newtx</code> for text and math.</p>
+<p>As discussed above, most font packages for LaTeX will not give you the quality of typesetting that you get with default fonts. However, there are few good packages out there. If you wish to typeset your document in Times New Roman, because you want to be different, then there is a good option for you. The <a href="https://ctan.org/pkg/newtx?lang=en">newtx</a> package has exceptionally good text and math typesetting. The actual serif font in <code class="language-plaintext highlighter-rouge">newtx</code> is a modified version of Adobe Times. If you really want to know the minute differences between Times and Times New Modern, <a href="https://creativepro.com/times-roman-vs-times-new-roman/#:~:text=The%20Times%20(Roman)%20and%20Times,a%20theme%2C%20so%20to%20speak.">you may start from here</a>.
+The <code class="language-plaintext highlighter-rouge">newtx</code> has all the math symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a matching monospace (typewriter) set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text. Here is an example of loading <code class="language-plaintext highlighter-rouge">newtx</code> for text and math.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\usepackage</span><span class="p">{</span>newtxtext<span class="p">}</span> <span class="c">% newtx Times font for text</span>
@@ -119,20 +117,20 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
     
     </code></pre></figure>
 
-<p>As seen above <code class="language-plaintext highlighter-rouge">newtx</code> comes in two packages for text and math. The second line loads <code class="language-plaintext highlighter-rouge">newtxmath</code> for math, but uses integral and brace symbols from Computer Modern font for better typesetting if you prefer them. The order in which you load packages is important. For example you may need to load <code class="language-plaintext highlighter-rouge">newtxmath</code> after AMS packages (discussed next) to make sure that you end up with correct font setting.</p>
+<p>As seen above <code class="language-plaintext highlighter-rouge">newtx</code> comes in two packages for text and math. The second line loads <code class="language-plaintext highlighter-rouge">newtxmath</code> for math, but uses integral and brace symbols from Computer Modern font for better typesetting if you prefer them. The order in which you load packages is important. For example, you may need to load <code class="language-plaintext highlighter-rouge">newtxmath</code> after AMS packages (discussed next) to make sure that you end up with correct font settings.</p>
 
 <h3 id="better-math-and-more-symbols">Better Math and More Symbols</h3>
 
-<p><a href="https://en.wikipedia.org/wiki/AMS-LaTeX">AMS-LaTeX</a> is a collection of packages that provide an extensive set of math symbols, macros and environments. Use the following lines to load them if you have math in your document.</p>
+<p><a href="https://en.wikipedia.org/wiki/AMS-LaTeX">AMS-LaTeX</a> is a collection of packages that provide an extensive set of math symbols, macros and environments. Use the following lines to load them if you have mathematics in your document.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
-    <span class="c">% AMS packages</span>
     <span class="k">\usepackage</span><span class="p">{</span>mathtools,amsfonts,amssymb,amsthm<span class="p">}</span>
     <span class="k">\interdisplaylinepenalty</span>=2500 <span class="c">% after amsmath to restore bad page breaks</span>
     
     </code></pre></figure>
 
-<p>Note that we load <code class="language-plaintext highlighter-rouge">mathtools</code> instead of <code class="language-plaintext highlighter-rouge">amsmath</code> to fix some minor issues. There are plenty of other packages to provide additional math symbols or different typesetting for certain equations. Fo example, <a href="https://ctan.org/pkg/nicefrac?lang=en">nicefrac</a> creates better looking fractions. The follwing two packages might be loaded if you need additional math symbols not available in AMS packages.</p>
+<p>Note that, we load <code class="language-plaintext highlighter-rouge">mathtools</code> instead of <code class="language-plaintext highlighter-rouge">amsmath</code> to fix some minor issues. There are plenty of other packages that provide additional math symbols or different typesetting for certain equations. Fo example, <a href="https://ctan.org/pkg/nicefrac?lang=en">nicefrac</a> creates better looking fractions. 
+The following two packages might be loaded if you need additional math symbols that are not available in AMS packages.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\usepackage</span><span class="na">[scr=rsfso]</span><span class="p">{</span>mathalfa<span class="p">}</span>
@@ -141,7 +139,7 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
     </code></pre></figure>
 
 <h3 id="bolds-italics-small-caps-etc">Bolds, Italics, Small Caps, etc.</h3>
-<p>Different shapes/styles of a font are accessible using the commands <code class="language-plaintext highlighter-rouge">\textit{}</code>, <code class="language-plaintext highlighter-rouge">\textbf{}</code>, and <code class="language-plaintext highlighter-rouge">\textsc{}</code> or using</p>
+<p>In LaTeX, different shapes/styles of a font are accessible using the commands <code class="language-plaintext highlighter-rouge">\textit{}</code>, <code class="language-plaintext highlighter-rouge">\textbf{}</code>, and <code class="language-plaintext highlighter-rouge">\textsc{}</code> or using</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="p">{</span><span class="k">\itshape</span> ...<span class="p">}</span> # Italic shape
@@ -150,7 +148,7 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
     
     </code></pre></figure>
 
-<p>In order to use these commnads, one needs to have a corresponding font shape available. However, most fonts don’t include all the comibinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package <a href="https://ctan.org/pkg/slantsc?lang=en">slantsc</a> enables the use of them.</p>
+<p>In order to use these, their corresponding font shapes must be available. However, most fonts don’t include all the combinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package <a href="https://ctan.org/pkg/slantsc?lang=en">slantsc</a> enables the use of them.</p>
 
 <p>Bold shapes of symbols may be particularly important for math typesetting. If some symbols don’t have bold shape, then a fake bold symbol may be created by just increasing the weight of a normal glyph. You may use the package <a href="https://ctan.org/pkg/bm?lang=en">bm</a> to do so. However, this should be only used very sparingly, and certainly not for body text.</p>
 
@@ -159,68 +157,50 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
     
     </code></pre></figure>
 
-<h3 id="upright-bold-greek-letters">Upright Bold Greek Letters</h3>
-<p>For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.</p>
-
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
-    <span class="k">\makeatletter</span>
-    <span class="k">\def\changegreek</span><span class="p">{</span><span class="k">\@</span>for<span class="k">\next</span>:=<span class="p">{</span><span class="c">%</span>
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,<span class="c">%</span>
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi<span class="p">}</span><span class="c">%</span>
-        <span class="k">\do</span><span class="p">{</span><span class="k">\expandafter\let\csname\next\expandafter\endcsname\csname\next</span> up<span class="k">\endcsname</span><span class="p">}}</span>
-    <span class="k">\def\changegreekbf</span><span class="p">{</span><span class="k">\@</span>for<span class="k">\next</span>:=<span class="p">{</span><span class="c">%</span>
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,<span class="c">%</span>
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi<span class="p">}</span><span class="c">%</span>
-        <span class="k">\do</span><span class="p">{</span><span class="k">\expandafter\def\csname\next\expandafter\endcsname\expandafter</span><span class="p">{</span><span class="c">%</span>
-        <span class="k">\expandafter\bm\expandafter</span><span class="p">{</span><span class="k">\csname\next</span> up<span class="k">\endcsname</span><span class="p">}}}}</span>
-    <span class="k">\makeatother</span>
-    
-    </code></pre></figure>
-
 <h2 id="spacing-kerning-and-microtypography">Spacing, Kerning, and Microtypography</h2>
 
-<p>The most amazing LaTeX package that automatically solves your microtypography concerns in <a href="https://ctan.org/pkg/microtype?lang=en">microtype</a>. It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packkages).</p>
+<p>The most impressive LaTeX package that automatically solves your microtypography concerns is <a href="https://ctan.org/pkg/microtype?lang=en">microtype</a>. It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packages).</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
-	<span class="k">\usepackage</span><span class="na">[protrusion=true,expansion=true]</span><span class="p">{</span>microtype<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="na">[protrusion=true,expansion=true]</span><span class="p">{</span>microtype<span class="p">}</span>
     
     </code></pre></figure>
 
 <h3 id="text-spacing-hyphenation-and-line-breaks">Text Spacing, Hyphenation, and Line Breaks</h3>
 
-<p>Correct spacing between symbols, words and sentences is a key component of good typesetting. TeX is designed to solve this issue out of the box in an almost perfect manner. However, some fine tuning always help, specially if you use anything other than default Computer Modern font family. Hyphenation has also the same story. You can tweek it if you are not happy with what comes out of the box. Hyphenation is a delicate matter that keeps balance between how the words are aligned at the end of each row, and how fragmented the text looks like in each line.</p>
-
-<p>I prefer to have follwing commands in the preamble (before <code class="language-plaintext highlighter-rouge">\begin{document}</code> where you load all other packages) to tweek sentence spacing and hyphenation.</p>
+<p>TeX is designed to create perfect spacing between symbols, words and sentences out of the box. However, some fine tuning always help, specially if you use anything other than default Computer Modern font. 
+The situation is the same with hyphenation. You may need to fine tune it to get perfect results. Hyphenation works delicately by keeping the balance between line justification, regularity of spacing, and word fragmentation.
+I prefer to have following commands in the preamble (before <code class="language-plaintext highlighter-rouge">\begin{document}</code> where you load all other packages) to adjust sentence spacing and hyphenation.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
-	<span class="k">\frenchspacing</span>
-	<span class="k">\usepackage</span><span class="p">{</span>impnattypo<span class="p">}</span>
-	<span class="k">\setlength</span><span class="p">{</span><span class="k">\emergencystretch</span><span class="p">}{</span>1em<span class="p">}</span>
+    <span class="k">\frenchspacing</span>
+    <span class="k">\usepackage</span><span class="p">{</span>impnattypo<span class="p">}</span>
+    <span class="k">\setlength</span><span class="p">{</span><span class="k">\emergencystretch</span><span class="p">}{</span>1em<span class="p">}</span>
     
     </code></pre></figure>
 
-<p>If you need some ragged text in your document, for example in certain environments, then load <a href="https://ctan.org/pkg/ragged2e?lang=en">ragged2e</a> package as well. It gives you some flexible and tunable ragged text environments.</p>
+<p>If you need some ragged text in your document, for example in certain environments, then load <a href="https://ctan.org/pkg/ragged2e?lang=en">ragged2e</a> package. It gives you some flexible and tunable ragged text environments.</p>
 
-<p>We do not discuss letter spacing and <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a> here for two reasons. First, if you already know what is kkerning then you may not need this guide at all :), and second, those microtypographic details should be automatically handled by proper packages that you load, such as <code class="language-plaintext highlighter-rouge">microtype</code> and <code class="language-plaintext highlighter-rouge">newtx</code>.</p>
+<p>We do not discuss letter spacing and <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a> here for two reasons. First, if you already know what is kerning then you may not need this guide at all :), and second, such microtypographic details should be automatically handled by proper packages that you load, such as <code class="language-plaintext highlighter-rouge">microtype</code> and <code class="language-plaintext highlighter-rouge">newtx</code>.</p>
 
 <h3 id="math-spacing">Math Spacing</h3>
-<p>Good spacing in math is way more complex than text. No matter, how good your math packages are, there might be still room to apply your own modifications. You can pretty much adjust any type space that does not look good. Here I just give two examples to adjust vertical spacing.</p>
+<p>Perfect spacing in math equations is way more complex than text. No matter, how good LaTeX math packages are, there might be still room to apply your own modifications. You can adjust almost any spacing that does not look good. Here I  give few examples.</p>
 
-<p>You are most likely to use <code class="language-plaintext highlighter-rouge">array</code> environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. You can use the follwing command to strech that out:</p>
+<p>You may use <code class="language-plaintext highlighter-rouge">array</code> environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. The following command increases line spacing for arrays.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\renewcommand*</span><span class="p">{</span><span class="k">\arraystretch</span><span class="p">}{</span>1.1<span class="p">}</span> <span class="c">% for array/matrix environments</span>
     
 	</code></pre></figure>
 
-<p>Similarly, the follwing command doubles the line spacing in <code class="language-plaintext highlighter-rouge">split</code> and <code class="language-plaintext highlighter-rouge">align</code> environments of <code class="language-plaintext highlighter-rouge">amsmath</code>:</p>
+<p>Similarly, the next command doubles the line spacing in <code class="language-plaintext highlighter-rouge">split</code> and <code class="language-plaintext highlighter-rouge">align</code> environments of <code class="language-plaintext highlighter-rouge">amsmath</code>.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    	
     <span class="k">\setlength</span><span class="p">{</span><span class="k">\jot</span><span class="p">}{</span>8pt<span class="p">}</span> <span class="c">% for split environment	</span>
     
 	</code></pre></figure>
 
-<p>More detailed spacing. If you want to only reduce the spacing in inline math without affecting display math mode.</p>
+<p>The next example is for reducing the horizontal spacing in inline math without affecting display math mode.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\everymath</span><span class="p">{</span>
@@ -232,30 +212,30 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
 	</code></pre></figure>
 
 <h2 id="floats">Floats</h2>
-<p>Floats include figures, tables, and other blocks such as code listings that are floating in the documnet. That is, the exact location of them are determined by TeX. The floats will have reference in the text either as figure or table.</p>
+<p>Floats include figures, tables, and other blocks such as code listings that are floating in the document. That is, the exact location of them are determined by TeX. The floats will typically have references in the text either as figure or table.</p>
 
 <h3 id="figures">Figures</h3>
-<p>We typically use <code class="language-plaintext highlighter-rouge">graphicx</code> to include figures in the document. In addition to <code class="language-plaintext highlighter-rouge">graphicx</code>, the follwing packages are also very helpfull in typesetting figures. You may check <code class="language-plaintext highlighter-rouge">subcaption</code> package documentations for more details.</p>
+<p>We typically use <code class="language-plaintext highlighter-rouge">graphicx</code> to include figures in the document. In addition to <code class="language-plaintext highlighter-rouge">graphicx</code>, the following packages are also very helpful in typesetting figures. You may check <code class="language-plaintext highlighter-rouge">subcaption</code> package documentations for more details.</p>
 
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
-	<span class="k">\usepackage</span><span class="p">{</span>float<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="p">{</span>dblfloatfix<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="p">{</span>wrapfig<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="na">[format=plain]</span><span class="p">{</span>caption<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="p">{</span>subcaption<span class="p">}</span>
-	<span class="k">\captionsetup</span><span class="na">[subfigure]</span><span class="p">{</span>justification=centering<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="p">{</span>float<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="p">{</span>dblfloatfix<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="p">{</span>wrapfig<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="na">[format=plain]</span><span class="p">{</span>caption<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="p">{</span>subcaption<span class="p">}</span>
+    <span class="k">\captionsetup</span><span class="na">[subfigure]</span><span class="p">{</span>justification=centering<span class="p">}</span>
     
-	</code></pre></figure>
+    </code></pre></figure>
 
-<p>If you have an old template that is not compatible with <code class="language-plaintext highlighter-rouge">subcaption</code> you may use <code class="language-plaintext highlighter-rouge">subfig</code> instead.</p>
+<p>If you have an old template that is not compatible with <code class="language-plaintext highlighter-rouge">subcaption</code> you may use <code class="language-plaintext highlighter-rouge">subfig</code> package instead.</p>
 
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
-	<span class="k">\usepackage</span><span class="na">[caption=false,font=footnotesize]</span><span class="p">{</span>subfig<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="na">[caption=false,font=footnotesize]</span><span class="p">{</span>subfig<span class="p">}</span>
     
-	</code></pre></figure>
+    </code></pre></figure>
 
 <h3 id="tables">Tables</h3>
-<p>The most advanced and flexible tool for typeseeting tables is the <code class="language-plaintext highlighter-rouge">tabu</code> package. It has an extensive documentation. In addition you may need <code class="language-plaintext highlighter-rouge">multirow</code> and <code class="language-plaintext highlighter-rouge">multicol</code> for more complex table structures.</p>
+<p>The most advanced and flexible tool for typesetting tables is the <code class="language-plaintext highlighter-rouge">tabu</code> package. It has an extensive documentation. In addition you may need <code class="language-plaintext highlighter-rouge">multirow</code> and <code class="language-plaintext highlighter-rouge">multicol</code> for more complex table structures.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
     <span class="k">\usepackage</span><span class="p">{</span>tabu<span class="p">}</span>
@@ -265,107 +245,104 @@ If one of the default TeX templates is used, the <a href="https://en.wikipedia.o
     
 	</code></pre></figure>
 
-<p>I highly recommned that you define one table style and stick to it for consistency. We will define some table styles in the next post of this series.</p>
+<p>I recommend defining one table style and sticking to it for consistency. We will define some table styles in the next post of this series.</p>
 
 <h3 id="other-environments">Other Environments</h3>
 
-<p>For verbatim listings, e.g. code snippets, you can use the <code class="language-plaintext highlighter-rouge">listings</code> package. It provide code highlighting as well. In the follwing, we use <code class="language-plaintext highlighter-rouge">algorithm</code> and <code class="language-plaintext highlighter-rouge">algorithm2e</code> packages for fancy typesetting of algorithms and pseudocodes. The lebel of the environment is changed to ‘Table’, as we would like to reffer to such blocks as tables. There are also color setting, from <code class="language-plaintext highlighter-rouge">xcolor</code> package, font setting, and etc., that you may adjust to yuor needs.</p>
+<p>For verbatim listings, e.g. code snippets, you can use the <code class="language-plaintext highlighter-rouge">listings</code> package. It provides code highlighting as well. 
+For typesetting pseudocode, you can load <code class="language-plaintext highlighter-rouge">algorithmicx</code> with <code class="language-plaintext highlighter-rouge">algpseudocode</code> as follows. It provides the <code class="language-plaintext highlighter-rouge">algorithm</code> environment for pseudocode. The label of the environment is changed to ‘Table’, as we would like to refer to such blocks as tables. You may check the syntax in the documentation of <code class="language-plaintext highlighter-rouge">algorithmicx</code> package.</p>
 
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
- 	<span class="k">\usepackage</span><span class="p">{</span>algorithm<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="na">[noend]</span><span class="p">{</span>algpseudocode<span class="p">}</span>
-	<span class="k">\floatname</span><span class="p">{</span>algorithm<span class="p">}{</span>Table<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="p">{</span>algorithm<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="na">[noend]</span><span class="p">{</span>algpseudocode<span class="p">}</span>
+    <span class="k">\floatname</span><span class="p">{</span>algorithm<span class="p">}{</span>Table<span class="p">}</span>
+    
+    </code></pre></figure>
 
-	<span class="k">\colorlet</span><span class="p">{</span>commentColor<span class="p">}{</span>Gray!60!black<span class="p">}</span><span class="c">%</span>
-	<span class="k">\usepackage</span><span class="na">[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]</span><span class="p">{</span>algorithm2e<span class="p">}</span><span class="c">%</span>
-	<span class="k">\newcommand\mycommfont</span><span class="na">[1]</span><span class="p">{</span><span class="k">\ttfamily\bfseries\textcolor</span><span class="p">{</span>commentColor<span class="p">}{</span>#1<span class="p">}}</span><span class="c">%</span>
-	<span class="k">\SetCommentSty</span><span class="p">{</span>mycommfont<span class="p">}</span><span class="c">%</span>
-	<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\algorithmcfname</span><span class="p">}{</span>Table<span class="p">}</span><span class="c">%</span>
-	<span class="k">\SetAlgoBlockMarkers</span><span class="p">{}{}</span><span class="c">%</span>
-	<span class="k">\SetKwProg</span><span class="p">{</span>Fn<span class="p">}{}{</span><span class="k">\{</span><span class="p">}{}</span><span class="c">%</span>
-	<span class="k">\SetEndCharOfAlgoLine</span><span class="p">{}</span><span class="c">%</span>
-	<span class="k">\DontPrintSemicolon</span><span class="c">%</span>
-	<span class="k">\SetNlSty</span><span class="p">{}{}{</span>:<span class="p">}</span><span class="c">%</span>
-	
-	</code></pre></figure>
+<p>In the following, we load <code class="language-plaintext highlighter-rouge">algorithm2e</code> package for fancy typesetting of <code class="language-plaintext highlighter-rouge">algorithm</code> environment. There are also color setting with <code class="language-plaintext highlighter-rouge">xcolor</code> package, font setting, and more styling details that you may adjust to your needs.</p>
+
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\colorlet</span><span class="p">{</span>commentColor<span class="p">}{</span>Gray!60!black<span class="p">}</span><span class="c">%</span>
+    <span class="k">\usepackage</span><span class="na">[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]</span><span class="p">{</span>algorithm2e<span class="p">}</span><span class="c">%</span>
+    <span class="k">\newcommand\mycommfont</span><span class="na">[1]</span><span class="p">{</span><span class="k">\ttfamily\bfseries\textcolor</span><span class="p">{</span>commentColor<span class="p">}{</span>#1<span class="p">}}</span><span class="c">%</span>
+    <span class="k">\SetCommentSty</span><span class="p">{</span>mycommfont<span class="p">}</span><span class="c">%</span>
+    <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\algorithmcfname</span><span class="p">}{</span>Table<span class="p">}</span><span class="c">%</span>
+    <span class="k">\SetAlgoBlockMarkers</span><span class="p">{}{}</span><span class="c">%</span>
+    <span class="k">\SetKwProg</span><span class="p">{</span>Fn<span class="p">}{}{</span><span class="k">\{</span><span class="p">}{}</span><span class="c">%</span>
+    <span class="k">\SetEndCharOfAlgoLine</span><span class="p">{}</span><span class="c">%</span>
+    <span class="k">\DontPrintSemicolon</span><span class="c">%</span>
+    <span class="k">\SetNlSty</span><span class="p">{}{}{</span>:<span class="p">}</span><span class="c">%</span>
+    
+    </code></pre></figure>
 
 <h2 id="references">References</h2>
-<p>You need to reffer to figures, tables, sections, equations, etc. in the text. All of such items need to be labeled for consistent reffering. Use prefix in your labels, e.g. <code class="language-plaintext highlighter-rouge">\label{sec:introduction}</code>. 
+<p>We need to refer to figures, tables, sections, equations, etc. in the text. All instances of such objects need to be labeled for consistent referrences. Use prefix in your labels, e.g. <code class="language-plaintext highlighter-rouge">\label{sec:introduction}</code>. 
 This will greatly help if you decide to create lists of different objects, e.g. list of images. 
-The next level of cosistency can be acheived by creating macros for reffering to different objects, for example, <code class="language-plaintext highlighter-rouge">\Fig{myfig}</code> may print <code class="language-plaintext highlighter-rouge">Fig. 10</code>.
-In the follwoing, we discuss bibliography and acronyms. These are also labeled items that we reffer to them in the text. We also create lists of bibliography and acronyms. 
+The next level of consistency can be achieved by creating macros for referring to different objects, for example, <code class="language-plaintext highlighter-rouge">\Fig{myfig}</code> may print <code class="language-plaintext highlighter-rouge">Fig. 10</code>.
+In the following, we discuss bibliography and acronyms. These are also labeled items that we refer to them in the text. We also create lists of bibliography and acronyms. 
 However, instead of using <code class="language-plaintext highlighter-rouge">\label</code> command, we use specific packages to manage these.</p>
 
 <h3 id="bibliography">Bibliography</h3>
-<p>Use BibTeX or Biber for your bibliography along with the <code class="language-plaintext highlighter-rouge">cite</code> package. You need to have style for your refernce list. The following example is for BibTeX with <code class="language-plaintext highlighter-rouge">IEEEtran</code> style. You need to have a copy of <code class="language-plaintext highlighter-rouge">IEEEtran.bst</code> file in your working directory.</p>
+<p>Use BibTeX or Biber for your bibliography along with the <code class="language-plaintext highlighter-rouge">cite</code> package. You need to have a separate style for your reference list. The following example is for BibTeX with <code class="language-plaintext highlighter-rouge">IEEEtran</code> style. This needs a copy of <code class="language-plaintext highlighter-rouge">IEEEtran.bst</code> file in your working directory.</p>
 
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
-	<span class="k">\usepackage</span><span class="p">{</span>cite<span class="p">}</span>
-	<span class="k">\let\labelindent\relax</span> <span class="c">% needed for compatibility with IEEtran</span>
-	<span class="k">\renewcommand\citeleft</span><span class="p">{{</span><span class="k">\small</span>[<span class="p">}}</span>
-	<span class="k">\renewcommand\citeright</span><span class="p">{{</span><span class="k">\small</span>]<span class="p">}}</span> 
-	<span class="k">\bibliographystyle</span><span class="p">{</span>IEEEtran<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="p">{</span>url<span class="p">}</span>
-	
-	</code></pre></figure>
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="p">{</span>cite<span class="p">}</span>
+    <span class="k">\let\labelindent\relax</span> <span class="c">% needed for compatibility with IEEtran</span>
+    <span class="k">\renewcommand\citeleft</span><span class="p">{{</span><span class="k">\small</span>[<span class="p">}}</span>
+    <span class="k">\renewcommand\citeright</span><span class="p">{{</span><span class="k">\small</span>]<span class="p">}}</span> 
+    <span class="k">\bibliographystyle</span><span class="p">{</span>IEEEtran<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="p">{</span>url<span class="p">}</span>
+    
+    </code></pre></figure>
 
 <p>You need to call <code class="language-plaintext highlighter-rouge">\bibliography{}</code> command with the name of your BibTex file where you want to place your bibliography list (typically at the end of the document).</p>
 
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\bibname</span><span class="p">}{</span>References<span class="p">}</span>
     <span class="k">\bibliography</span><span class="p">{</span>my<span class="p">_</span>biblio<span class="p">_</span>db<span class="p">}</span>
-	
-	</code></pre></figure>
+    
+    </code></pre></figure>
 
-<h3 id="acronyms-and-glosaries">Acronyms and Glosaries</h3>
+<h3 id="acronyms-and-glossaries">Acronyms and Glossaries</h3>
 <p>Use <code class="language-plaintext highlighter-rouge">glossaries</code> package for list of symbols and acronyms.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
     <span class="k">\usepackage</span><span class="na">[xindy,acronym,shortcuts,nowarn,nosuper,nonumberlist,smallcaps]</span><span class="p">{</span>glossaries<span class="p">}</span>
     <span class="k">\usepackage</span><span class="p">{</span>glossary-longragged<span class="p">}</span>
-	<span class="k">\usepackage</span><span class="p">{</span>glossary-tree<span class="p">}</span>
+    <span class="k">\usepackage</span><span class="p">{</span>glossary-tree<span class="p">}</span>
     <span class="k">\setacronymstyle</span><span class="p">{</span>long-short<span class="p">}</span>
     <span class="k">\glsdisablehyper</span>
     <span class="k">\makeglossaries</span>
-    <span class="k">\immediate\write</span>18<span class="p">{</span>makeglossaries <span class="k">\jobname</span><span class="p">}</span> <span class="c">% run (pdf)latex twice with --shell-escape</span>
+    <span class="k">\immediate\write</span>18<span class="p">{</span>makeglossaries <span class="k">\jobname</span><span class="p">}</span> <span class="c">% runs (pdf)latex twice with --shell-escape</span>
     <span class="k">\makeglossaries</span>
-	
-	</code></pre></figure>
-
-<p>This uses small caps, if you want normal caps for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.</p>
-
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	
-    <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\glsnamefont</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\MakeUppercase</span><span class="p">{</span>#1<span class="p">}}</span>
-	
-	</code></pre></figure>
-
-<p>You can define new glossaries styles if for example the alignment or spacing of acronyms list is not perfrct. The package <code class="language-plaintext highlighter-rouge">glossaries-extra</code> provides more optuons and flexibility, especially if you have more than one abbrevation list (e.g. acronyms and symbols). The follwing is an example showing how you can use <code class="language-plaintext highlighter-rouge">setabbreviationstyle</code> command for each category of abbreviations that you have.</p>
-
-<figure class="highlight"><pre><code class="language-tex" data-lang="tex">	   
-    <span class="k">\usepackage</span><span class="na">[acronym,shortcuts=ac]</span><span class="p">{</span>glossaries-extra<span class="p">}</span>
-    <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\glsabbrvscfont</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\textsc</span><span class="p">{</span><span class="k">\MakeTextLowercase</span><span class="p">{</span><span class="k">\caps</span><span class="p">{</span>#1<span class="p">}}}}</span>
-    <span class="k">\setabbreviationstyle</span><span class="na">[acronym]</span><span class="p">{</span>long-short-sc<span class="p">}</span>
     
-	</code></pre></figure>
+    </code></pre></figure>
 
-<h2 id="lists">Lists</h2>
-<p>The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may reffer to a style manual for details. Here, we just consider typesetting options in tex, and recmmend the use of <code class="language-plaintext highlighter-rouge">enumitem</code> package. With <code class="language-plaintext highlighter-rouge">enumitem</code> you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style.</p>
-
-<p>The follwing code creates the list style <code class="language-plaintext highlighter-rouge">hang</code> for block lists that are hanging from a paragraph with small separation, the style <code class="language-plaintext highlighter-rouge">alph</code> for lists with alphabetical labels, and a new environment <code class="language-plaintext highlighter-rouge">Ienum</code> for inline lists with short phrase. If long phrase or sentences are use in inline list, the puncuation would be different.</p>
+<p>This uses small caps for glossaries, if you want normal capital letters for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.</p>
 
 <figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
-	<span class="k">\usepackage</span><span class="na">[shortlabels, inline]</span><span class="p">{</span>enumitem<span class="p">}</span>
+    <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\glsnamefont</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\MakeUppercase</span><span class="p">{</span>#1<span class="p">}}</span>
+    
+    </code></pre></figure>
+
+<h2 id="lists">Lists</h2>
+<p>The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may refer to a style manual for details. Here, we just consider typesetting options in tex, and recommend the use of <code class="language-plaintext highlighter-rouge">enumitem</code> package. With <code class="language-plaintext highlighter-rouge">enumitem</code> you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style.</p>
+
+<p>As an example, the following code creates the list style <code class="language-plaintext highlighter-rouge">hang</code> for block lists that are hanging from a paragraph with small separation, the style <code class="language-plaintext highlighter-rouge">alph</code> for lists with alphabetical labels, and a new environment <code class="language-plaintext highlighter-rouge">Ienum</code> for inline lists with short phrase. If long phrase or sentences are used in inline list, the punctuation would be different.</p>
+
+<figure class="highlight"><pre><code class="language-tex" data-lang="tex">    
+    <span class="k">\usepackage</span><span class="na">[shortlabels, inline]</span><span class="p">{</span>enumitem<span class="p">}</span>
     <span class="k">\setlist</span><span class="p">{</span>nolistsep<span class="p">}</span>
-	<span class="k">\SetEnumitemKey</span><span class="p">{</span>hang<span class="p">}{</span>topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
-		leftmargin=!, labelindent=<span class="k">\parindent</span>+1em, labelsep=0.5em, labelwidth=1em<span class="p">}</span>
-	<span class="k">\SetEnumitemKey</span><span class="p">{</span>alph<span class="p">}{</span>label=<span class="k">\emph</span><span class="p">{</span><span class="k">\alph*</span><span class="p">}</span><span class="k">\textbf</span><span class="p">{</span>.<span class="p">}}</span>
+    <span class="k">\SetEnumitemKey</span><span class="p">{</span>hang<span class="p">}{</span>topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+        leftmargin=!, labelindent=<span class="k">\parindent</span>+1em, labelsep=0.5em, labelwidth=1em<span class="p">}</span>
+    <span class="k">\SetEnumitemKey</span><span class="p">{</span>alph<span class="p">}{</span>label=<span class="k">\emph</span><span class="p">{</span><span class="k">\alph*</span><span class="p">}</span><span class="k">\textbf</span><span class="p">{</span>.<span class="p">}}</span>
     <span class="k">\newenvironment</span><span class="p">{</span>Ienum<span class="p">}{</span><span class="nt">\begin{enumerate*}</span>[label=(<span class="k">\roman*</span>), itemjoin=<span class="p">{{</span>, <span class="p">}}</span>, itemjoin*=<span class="p">{{</span>, and <span class="p">}}</span>]<span class="p">}</span><span class="c">%</span>
     <span class="p">{</span><span class="nt">\end{enumerate*}</span><span class="p">}</span>
     
-	</code></pre></figure>
+    </code></pre></figure>
 
 <h2 id="to-be-continued">To be Continued</h2>
-<p>This post covered the essential stuff in LaTeX. There will be a next part to this series covering XeTeX and a long list of custom settings and definitions. Stay tuned :)</p>
+<p>This post covered some essential typesetting subjects in LaTeX. There will be a next part from this series covering XeTeX and providing a long list of custom settings and definitions. Stay tuned :)</p>
 
 
   </div>

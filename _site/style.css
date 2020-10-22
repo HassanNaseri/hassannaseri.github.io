@@ -328,6 +328,7 @@ code {
   font-family: "Linux Libertine Mono", "Bitstream Vera Sans Mono", "Courier", monospace;
   font-size: 13px;
   letter-spacing: -0.5px;
+  display: inline-block;
 }
 
 .highlight .c {

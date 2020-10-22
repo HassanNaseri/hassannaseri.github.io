@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-28T13:11:01+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">hassannaseri.github.io</title><subtitle>Random Notes of a Technology Doctor!</subtitle><entry><title type="html">Tex Typography I</title><link href="http://localhost:4000/Tex-Typography-I/" rel="alternate" type="text/html" title="Tex Typography I" /><published>2020-09-10T00:00:00+03:00</published><updated>2020-09-10T00:00:00+03:00</updated><id>http://localhost:4000/Tex-Typography-I</id><content type="html" xml:base="http://localhost:4000/Tex-Typography-I/">&lt;p&gt;About four years ago I started the writing of my PhD thesis using a &lt;a href=&quot;https://en.wikipedia.org/wiki/LaTeX&quot;&gt;LaTeX&lt;/a&gt; template provided by the university. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T01:08:15+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">hassannaseri.github.io</title><subtitle>Random Notes of a Technology Doctor!</subtitle><entry><title type="html">Tex Typography I</title><link href="http://localhost:4000/Tex-Typography-I/" rel="alternate" type="text/html" title="Tex Typography I" /><published>2020-10-22T00:00:00+03:00</published><updated>2020-10-22T00:00:00+03:00</updated><id>http://localhost:4000/Tex-Typography-I</id><content type="html" xml:base="http://localhost:4000/Tex-Typography-I/">&lt;p&gt;About four years ago I started the writing of my PhD thesis using a &lt;a href=&quot;https://en.wikipedia.org/wiki/LaTeX&quot;&gt;LaTeX&lt;/a&gt; template provided by the university. 
 But that template did not look right - sometimes I get obsessed with how things look like. 
 Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
 Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.&lt;/p&gt;
 
-&lt;div style=&quot;background: white; width: 80%; 
-            padding-left: 3px; padding-right: 3px; 
-            border: 2px #BA4B9A; border-style: dotted&quot;&gt;
+&lt;div style=&quot;width: 80%;
+            padding-left: 3px; padding-right: 3px;&quot;&gt;
 &lt;a href=&quot;http://phdcomics.com/comics.php?f=1756&quot;&gt;
-&lt;img style=&quot;display: block&quot; src=&quot;http://phdcomics.com/comics/archive/phd102914s.gif&quot; alt=&quot;PHD Comic&quot; /&gt;
+&lt;img style=&quot;display: block&quot; src=&quot;/images/phd102914s.gif&quot; alt=&quot;PHD Comic&quot; /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 
@@ -18,7 +17,7 @@ The second part will cover XeTeX together with a long list of custom settings an
 
 &lt;p&gt;Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
 Moreover, this series is not about writing style, except for few tips. I would like to stress the importance of following a style guide for writing. There are few comprehensive style guides out there. Choose one and stick to it. &lt;a href=&quot;https://www.chicagomanualofstyle.org/home.html&quot;&gt;The Chicago Manual of Style&lt;/a&gt; is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge relief whenever in doubt. 
-There are also many very good websites to search for or aks things that you don’t find in a style guide. I extensively used &lt;a href=&quot;https://english.stackexchange.com/&quot;&gt;english.stackexchange.com&lt;/a&gt; and &lt;a href=&quot;https://tex.stackexchange.com/&quot;&gt;tex.stackexchange.com&lt;/a&gt;.&lt;/p&gt;
+There are also many very good websites to search for or ask about things that you don’t find in a style guide. I extensively used &lt;a href=&quot;https://english.stackexchange.com/&quot;&gt;english.stackexchange.com&lt;/a&gt; and &lt;a href=&quot;https://tex.stackexchange.com/&quot;&gt;tex.stackexchange.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;fonts&quot;&gt;Fonts&lt;/h2&gt;
 &lt;p&gt;A quick disclaimer before we start: in order to keep things simple, the word “font” is used loosely in this document, and interchangeably with the word typeface. 
@@ -29,12 +28,14 @@ For math typesetting, there is normal math font and a math calligraphy font (kno
 If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_Modern&quot;&gt;Computer Modern&lt;/a&gt; family of typefaces (actually the updated Latin Modern) gets applied. It comes with matching shapes for serif, non-serif, typewriter, math, etc., and guarantees an almost perfect typesetting for all text and math throughout the document.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
-&lt;p&gt;TeX has a quite sophisticated font system &lt;a href=&quot;https://en.wikipedia.org/wiki/Metafont&quot;&gt;Metafont&lt;/a&gt;, created alongside TeX itself. It generates scalable fonts with non-rivaled typesetting features. However, there are only few fonts with extensive symbols to choose from. In fact, any font other than Computer Modern may come with some limitations or complications somewhere if you start nit picking. The introduction of TrueType and OpenType fonts, made scalable and good looking fonts available for a much wider range of applications. However, standard TeX cannot easily use such fonts and even if used it does not guarantee the professional typesetting that you expect from TeX out of the box. Hence, the problem arises when you want or asked to use a font other than Computer Modern and you still want a comparable quality for typesetting text and more critically math equation.&lt;/p&gt;
+&lt;p&gt;TeX has quite a sophisticated font system &lt;a href=&quot;https://en.wikipedia.org/wiki/Metafont&quot;&gt;Metafont&lt;/a&gt;, created alongside TeX itself. It generates scalable fonts with non-rivaled typesetting features. However, there are only few fonts with extensive symbols to choose from. 
+In fact, any font other than Computer Modern will show some limitations or complications if you start nit picking. The introduction of TrueType and OpenType fonts, made scalable and elegant fonts available to a much wider range of applications. However, standard TeX cannot easily use such fonts; and even if used it does not guarantee the professional typesetting that you expect from TeX out of the box. Hence, the problem arises when you want or asked to use a font other than Computer Modern but you still want a comparable quality for typesetting text and more critically math equations.&lt;/p&gt;
 
 &lt;p&gt;There are two solutions, a) switch from TeX/LaTeX to something newer like XeTeX or LuaTeX, b) be lucky and find a very good LaTeX package for the font that you want and workaround remaining issues. In this post we are covering the second option.&lt;/p&gt;
 
 &lt;h3 id=&quot;times-font&quot;&gt;Times Font&lt;/h3&gt;
-&lt;p&gt;Most font packages for LaTeX will not give you the quality of typesetting that you get with default fonts. However, there are few good packages as well. If you wish to typeset your document with Times New Roman, because you want to be different, then there is a good option for you. The &lt;a href=&quot;https://ctan.org/pkg/newtx?lang=en&quot;&gt;newtx&lt;/a&gt; package has exceptionally good text and math typesetting for Times New Roman family of fonts. The actual serif font in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; is a modified version of Adobe Times. It has all the maths symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a matching monospace (typewriter) set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text. Here is how to load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; for text and math.&lt;/p&gt;
+&lt;p&gt;As discussed above, most font packages for LaTeX will not give you the quality of typesetting that you get with default fonts. However, there are few good packages out there. If you wish to typeset your document in Times New Roman, because you want to be different, then there is a good option for you. The &lt;a href=&quot;https://ctan.org/pkg/newtx?lang=en&quot;&gt;newtx&lt;/a&gt; package has exceptionally good text and math typesetting. The actual serif font in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; is a modified version of Adobe Times. If you really want to know the minute differences between Times and Times New Modern, &lt;a href=&quot;https://creativepro.com/times-roman-vs-times-new-roman/#:~:text=The%20Times%20(Roman)%20and%20Times,a%20theme%2C%20so%20to%20speak.&quot;&gt;you may start from here&lt;/a&gt;.
+The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; has all the math symbols of the Computer Modern and AMS fonts and more. There are complementing sans-serif font based on Helvetica, and a matching monospace (typewriter) set. The package also provides a libertine and garamondx options that uses Libertine or garamond-alike math symbols to match the corresponding text. Here is an example of loading &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; for text and math.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;newtxtext&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% newtx Times font for text&lt;/span&gt;
@@ -42,20 +43,20 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;As seen above &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; comes in two packages for text and math. The second line loads &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtxmath&lt;/code&gt; for math, but uses integral and brace symbols from Computer Modern font for better typesetting if you prefer them. The order in which you load packages is important. For example you may need to load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtxmath&lt;/code&gt; after AMS packages (discussed next) to make sure that you end up with correct font setting.&lt;/p&gt;
+&lt;p&gt;As seen above &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt; comes in two packages for text and math. The second line loads &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtxmath&lt;/code&gt; for math, but uses integral and brace symbols from Computer Modern font for better typesetting if you prefer them. The order in which you load packages is important. For example, you may need to load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtxmath&lt;/code&gt; after AMS packages (discussed next) to make sure that you end up with correct font settings.&lt;/p&gt;
 
 &lt;h3 id=&quot;better-math-and-more-symbols&quot;&gt;Better Math and More Symbols&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/AMS-LaTeX&quot;&gt;AMS-LaTeX&lt;/a&gt; is a collection of packages that provide an extensive set of math symbols, macros and environments. Use the following lines to load them if you have math in your document.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/AMS-LaTeX&quot;&gt;AMS-LaTeX&lt;/a&gt; is a collection of packages that provide an extensive set of math symbols, macros and environments. Use the following lines to load them if you have mathematics in your document.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
-    &lt;span class=&quot;c&quot;&gt;% AMS packages&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;mathtools,amsfonts,amssymb,amsthm&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\interdisplaylinepenalty&lt;/span&gt;=2500 &lt;span class=&quot;c&quot;&gt;% after amsmath to restore bad page breaks&lt;/span&gt;
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Note that we load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathtools&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amsmath&lt;/code&gt; to fix some minor issues. There are plenty of other packages to provide additional math symbols or different typesetting for certain equations. Fo example, &lt;a href=&quot;https://ctan.org/pkg/nicefrac?lang=en&quot;&gt;nicefrac&lt;/a&gt; creates better looking fractions. The follwing two packages might be loaded if you need additional math symbols not available in AMS packages.&lt;/p&gt;
+&lt;p&gt;Note that, we load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathtools&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amsmath&lt;/code&gt; to fix some minor issues. There are plenty of other packages that provide additional math symbols or different typesetting for certain equations. Fo example, &lt;a href=&quot;https://ctan.org/pkg/nicefrac?lang=en&quot;&gt;nicefrac&lt;/a&gt; creates better looking fractions. 
+The following two packages might be loaded if you need additional math symbols that are not available in AMS packages.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[scr=rsfso]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;mathalfa&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -64,7 +65,7 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;bolds-italics-small-caps-etc&quot;&gt;Bolds, Italics, Small Caps, etc.&lt;/h3&gt;
-&lt;p&gt;Different shapes/styles of a font are accessible using the commands &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textit{}&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textbf{}&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textsc{}&lt;/code&gt; or using&lt;/p&gt;
+&lt;p&gt;In LaTeX, different shapes/styles of a font are accessible using the commands &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textit{}&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textbf{}&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\textsc{}&lt;/code&gt; or using&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\itshape&lt;/span&gt; ...&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; # Italic shape
@@ -73,7 +74,7 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In order to use these commnads, one needs to have a corresponding font shape available. However, most fonts don’t include all the comibinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package &lt;a href=&quot;https://ctan.org/pkg/slantsc?lang=en&quot;&gt;slantsc&lt;/a&gt; enables the use of them.&lt;/p&gt;
+&lt;p&gt;In order to use these, their corresponding font shapes must be available. However, most fonts don’t include all the combinations of these shapes. For example, slanted or bold small capitals are rarely found in fonts. If for a given font, small capitals are available in slanted or bold shapes, then the package &lt;a href=&quot;https://ctan.org/pkg/slantsc?lang=en&quot;&gt;slantsc&lt;/a&gt; enables the use of them.&lt;/p&gt;
 
 &lt;p&gt;Bold shapes of symbols may be particularly important for math typesetting. If some symbols don’t have bold shape, then a fake bold symbol may be created by just increasing the weight of a normal glyph. You may use the package &lt;a href=&quot;https://ctan.org/pkg/bm?lang=en&quot;&gt;bm&lt;/a&gt; to do so. However, this should be only used very sparingly, and certainly not for body text.&lt;/p&gt;
 
@@ -82,68 +83,50 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;upright-bold-greek-letters&quot;&gt;Upright Bold Greek Letters&lt;/h3&gt;
-&lt;p&gt;For some reason LaTeX does not have upright greek letters, they are all italic. It is common in many disciplines to typeset vectors and matrices with upright letters in math mode.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
-    &lt;span class=&quot;k&quot;&gt;\makeatletter&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\def\changegreek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\@&lt;/span&gt;for&lt;span class=&quot;k&quot;&gt;\next&lt;/span&gt;:=&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;\do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\expandafter\let\csname\next\expandafter\endcsname\csname\next&lt;/span&gt; up&lt;span class=&quot;k&quot;&gt;\endcsname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\def\changegreekbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\@&lt;/span&gt;for&lt;span class=&quot;k&quot;&gt;\next&lt;/span&gt;:=&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        alpha,beta,gamma,delta,epsilon,zeta,eta,theta,kappa,lambda,mu,nu,xi,pi,rho,sigma,&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        tau,upsilon,chi,psi,omega,varepsilon,vartheta,varpi,varrho,varsigma,varphi&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;\do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\expandafter\def\csname\next\expandafter\endcsname\expandafter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;\expandafter\bm\expandafter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\csname\next&lt;/span&gt; up&lt;span class=&quot;k&quot;&gt;\endcsname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}}}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\makeatother&lt;/span&gt;
-    
-    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
 &lt;h2 id=&quot;spacing-kerning-and-microtypography&quot;&gt;Spacing, Kerning, and Microtypography&lt;/h2&gt;
 
-&lt;p&gt;The most amazing LaTeX package that automatically solves your microtypography concerns in &lt;a href=&quot;https://ctan.org/pkg/microtype?lang=en&quot;&gt;microtype&lt;/a&gt;. It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packkages).&lt;/p&gt;
+&lt;p&gt;The most impressive LaTeX package that automatically solves your microtypography concerns is &lt;a href=&quot;https://ctan.org/pkg/microtype?lang=en&quot;&gt;microtype&lt;/a&gt;. It also partially works in XeTeX and LuaTeX. I recommend you always load it as your first package in any document (before other packages).&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[protrusion=true,expansion=true]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;microtype&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[protrusion=true,expansion=true]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;microtype&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;text-spacing-hyphenation-and-line-breaks&quot;&gt;Text Spacing, Hyphenation, and Line Breaks&lt;/h3&gt;
 
-&lt;p&gt;Correct spacing between symbols, words and sentences is a key component of good typesetting. TeX is designed to solve this issue out of the box in an almost perfect manner. However, some fine tuning always help, specially if you use anything other than default Computer Modern font family. Hyphenation has also the same story. You can tweek it if you are not happy with what comes out of the box. Hyphenation is a delicate matter that keeps balance between how the words are aligned at the end of each row, and how fragmented the text looks like in each line.&lt;/p&gt;
-
-&lt;p&gt;I prefer to have follwing commands in the preamble (before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\begin{document}&lt;/code&gt; where you load all other packages) to tweek sentence spacing and hyphenation.&lt;/p&gt;
+&lt;p&gt;TeX is designed to create perfect spacing between symbols, words and sentences out of the box. However, some fine tuning always help, specially if you use anything other than default Computer Modern font. 
+The situation is the same with hyphenation. You may need to fine tune it to get perfect results. Hyphenation works delicately by keeping the balance between line justification, regularity of spacing, and word fragmentation.
+I prefer to have following commands in the preamble (before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\begin{document}&lt;/code&gt; where you load all other packages) to adjust sentence spacing and hyphenation.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
-	&lt;span class=&quot;k&quot;&gt;\frenchspacing&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;impnattypo&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\setlength&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\emergencystretch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\frenchspacing&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;impnattypo&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\setlength&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\emergencystretch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If you need some ragged text in your document, for example in certain environments, then load &lt;a href=&quot;https://ctan.org/pkg/ragged2e?lang=en&quot;&gt;ragged2e&lt;/a&gt; package as well. It gives you some flexible and tunable ragged text environments.&lt;/p&gt;
+&lt;p&gt;If you need some ragged text in your document, for example in certain environments, then load &lt;a href=&quot;https://ctan.org/pkg/ragged2e?lang=en&quot;&gt;ragged2e&lt;/a&gt; package. It gives you some flexible and tunable ragged text environments.&lt;/p&gt;
 
-&lt;p&gt;We do not discuss letter spacing and &lt;a href=&quot;https://en.wikipedia.org/wiki/Kerning&quot;&gt;kerning&lt;/a&gt; here for two reasons. First, if you already know what is kkerning then you may not need this guide at all :), and second, those microtypographic details should be automatically handled by proper packages that you load, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;microtype&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We do not discuss letter spacing and &lt;a href=&quot;https://en.wikipedia.org/wiki/Kerning&quot;&gt;kerning&lt;/a&gt; here for two reasons. First, if you already know what is kerning then you may not need this guide at all :), and second, such microtypographic details should be automatically handled by proper packages that you load, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;microtype&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newtx&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;math-spacing&quot;&gt;Math Spacing&lt;/h3&gt;
-&lt;p&gt;Good spacing in math is way more complex than text. No matter, how good your math packages are, there might be still room to apply your own modifications. You can pretty much adjust any type space that does not look good. Here I just give two examples to adjust vertical spacing.&lt;/p&gt;
+&lt;p&gt;Perfect spacing in math equations is way more complex than text. No matter, how good LaTeX math packages are, there might be still room to apply your own modifications. You can adjust almost any spacing that does not look good. Here I  give few examples.&lt;/p&gt;
 
-&lt;p&gt;You are most likely to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;array&lt;/code&gt; environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. You can use the follwing command to strech that out:&lt;/p&gt;
+&lt;p&gt;You may use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;array&lt;/code&gt; environment for multiline math equations and matrices. Often with large symbols, array environment looks crammed. The following command increases line spacing for arrays.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\renewcommand*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\arraystretch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;1.1&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% for array/matrix environments&lt;/span&gt;
     
 	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Similarly, the follwing command doubles the line spacing in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;split&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt; environments of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amsmath&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Similarly, the next command doubles the line spacing in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;split&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt; environments of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amsmath&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    	
     &lt;span class=&quot;k&quot;&gt;\setlength&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\jot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;8pt&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% for split environment	&lt;/span&gt;
     
 	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;More detailed spacing. If you want to only reduce the spacing in inline math without affecting display math mode.&lt;/p&gt;
+&lt;p&gt;The next example is for reducing the horizontal spacing in inline math without affecting display math mode.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\everymath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -155,30 +138,30 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
 	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;floats&quot;&gt;Floats&lt;/h2&gt;
-&lt;p&gt;Floats include figures, tables, and other blocks such as code listings that are floating in the documnet. That is, the exact location of them are determined by TeX. The floats will have reference in the text either as figure or table.&lt;/p&gt;
+&lt;p&gt;Floats include figures, tables, and other blocks such as code listings that are floating in the document. That is, the exact location of them are determined by TeX. The floats will typically have references in the text either as figure or table.&lt;/p&gt;
 
 &lt;h3 id=&quot;figures&quot;&gt;Figures&lt;/h3&gt;
-&lt;p&gt;We typically use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;graphicx&lt;/code&gt; to include figures in the document. In addition to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;graphicx&lt;/code&gt;, the follwing packages are also very helpfull in typesetting figures. You may check &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subcaption&lt;/code&gt; package documentations for more details.&lt;/p&gt;
+&lt;p&gt;We typically use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;graphicx&lt;/code&gt; to include figures in the document. In addition to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;graphicx&lt;/code&gt;, the following packages are also very helpful in typesetting figures. You may check &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subcaption&lt;/code&gt; package documentations for more details.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;float&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;dblfloatfix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;wrapfig&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[format=plain]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;caption&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;subcaption&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\captionsetup&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[subfigure]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;justification=centering&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;float&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;dblfloatfix&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;wrapfig&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[format=plain]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;caption&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;subcaption&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\captionsetup&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[subfigure]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;justification=centering&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If you have an old template that is not compatible with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subcaption&lt;/code&gt; you may use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subfig&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;If you have an old template that is not compatible with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subcaption&lt;/code&gt; you may use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subfig&lt;/code&gt; package instead.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[caption=false,font=footnotesize]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;subfig&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[caption=false,font=footnotesize]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;subfig&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;The most advanced and flexible tool for typeseeting tables is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tabu&lt;/code&gt; package. It has an extensive documentation. In addition you may need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;multirow&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;multicol&lt;/code&gt; for more complex table structures.&lt;/p&gt;
+&lt;p&gt;The most advanced and flexible tool for typesetting tables is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tabu&lt;/code&gt; package. It has an extensive documentation. In addition you may need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;multirow&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;multicol&lt;/code&gt; for more complex table structures.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;tabu&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -188,107 +171,104 @@ If one of the default TeX templates is used, the &lt;a href=&quot;https://en.wik
     
 	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;I highly recommned that you define one table style and stick to it for consistency. We will define some table styles in the next post of this series.&lt;/p&gt;
+&lt;p&gt;I recommend defining one table style and sticking to it for consistency. We will define some table styles in the next post of this series.&lt;/p&gt;
 
 &lt;h3 id=&quot;other-environments&quot;&gt;Other Environments&lt;/h3&gt;
 
-&lt;p&gt;For verbatim listings, e.g. code snippets, you can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listings&lt;/code&gt; package. It provide code highlighting as well. In the follwing, we use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm2e&lt;/code&gt; packages for fancy typesetting of algorithms and pseudocodes. The lebel of the environment is changed to ‘Table’, as we would like to reffer to such blocks as tables. There are also color setting, from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xcolor&lt;/code&gt; package, font setting, and etc., that you may adjust to yuor needs.&lt;/p&gt;
+&lt;p&gt;For verbatim listings, e.g. code snippets, you can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listings&lt;/code&gt; package. It provides code highlighting as well. 
+For typesetting pseudocode, you can load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithmicx&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algpseudocode&lt;/code&gt; as follows. It provides the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm&lt;/code&gt; environment for pseudocode. The label of the environment is changed to ‘Table’, as we would like to refer to such blocks as tables. You may check the syntax in the documentation of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithmicx&lt;/code&gt; package.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
- 	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[noend]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algpseudocode&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\floatname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Table&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[noend]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algpseudocode&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\floatname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Table&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-	&lt;span class=&quot;k&quot;&gt;\colorlet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;commentColor&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Gray!60!black&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm2e&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\newcommand\mycommfont&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[1]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ttfamily\bfseries\textcolor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;commentColor&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;#1&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetCommentSty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;mycommfont&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\algorithmcfname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Table&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetAlgoBlockMarkers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetKwProg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Fn&lt;span class=&quot;p&quot;&gt;}{}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetEndCharOfAlgoLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\DontPrintSemicolon&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetNlSty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}{}{&lt;/span&gt;:&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
-	
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;In the following, we load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm2e&lt;/code&gt; package for fancy typesetting of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algorithm&lt;/code&gt; environment. There are also color setting with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xcolor&lt;/code&gt; package, font setting, and more styling details that you may adjust to your needs.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\colorlet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;commentColor&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Gray!60!black&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[algoruled,linesnumbered,algochapter,noline,displayblockmarkers]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;algorithm2e&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\newcommand\mycommfont&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[1]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\ttfamily\bfseries\textcolor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;commentColor&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;#1&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetCommentSty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;mycommfont&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\algorithmcfname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;Table&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetAlgoBlockMarkers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetKwProg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Fn&lt;span class=&quot;p&quot;&gt;}{}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetEndCharOfAlgoLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\DontPrintSemicolon&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetNlSty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}{}{&lt;/span&gt;:&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+    
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;p&gt;You need to reffer to figures, tables, sections, equations, etc. in the text. All of such items need to be labeled for consistent reffering. Use prefix in your labels, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\label{sec:introduction}&lt;/code&gt;. 
+&lt;p&gt;We need to refer to figures, tables, sections, equations, etc. in the text. All instances of such objects need to be labeled for consistent referrences. Use prefix in your labels, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\label{sec:introduction}&lt;/code&gt;. 
 This will greatly help if you decide to create lists of different objects, e.g. list of images. 
-The next level of cosistency can be acheived by creating macros for reffering to different objects, for example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Fig{myfig}&lt;/code&gt; may print &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fig. 10&lt;/code&gt;.
-In the follwoing, we discuss bibliography and acronyms. These are also labeled items that we reffer to them in the text. We also create lists of bibliography and acronyms. 
+The next level of consistency can be achieved by creating macros for referring to different objects, for example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Fig{myfig}&lt;/code&gt; may print &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fig. 10&lt;/code&gt;.
+In the following, we discuss bibliography and acronyms. These are also labeled items that we refer to them in the text. We also create lists of bibliography and acronyms. 
 However, instead of using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\label&lt;/code&gt; command, we use specific packages to manage these.&lt;/p&gt;
 
 &lt;h3 id=&quot;bibliography&quot;&gt;Bibliography&lt;/h3&gt;
-&lt;p&gt;Use BibTeX or Biber for your bibliography along with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cite&lt;/code&gt; package. You need to have style for your refernce list. The following example is for BibTeX with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEEtran&lt;/code&gt; style. You need to have a copy of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEEtran.bst&lt;/code&gt; file in your working directory.&lt;/p&gt;
+&lt;p&gt;Use BibTeX or Biber for your bibliography along with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cite&lt;/code&gt; package. You need to have a separate style for your reference list. The following example is for BibTeX with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEEtran&lt;/code&gt; style. This needs a copy of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEEtran.bst&lt;/code&gt; file in your working directory.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;cite&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\let\labelindent\relax&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% needed for compatibility with IEEtran&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\renewcommand\citeleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\small&lt;/span&gt;[&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\renewcommand\citeright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\small&lt;/span&gt;]&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt; 
-	&lt;span class=&quot;k&quot;&gt;\bibliographystyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;IEEEtran&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;url&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;cite&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\let\labelindent\relax&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% needed for compatibility with IEEtran&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\renewcommand\citeleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\small&lt;/span&gt;[&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\renewcommand\citeright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\small&lt;/span&gt;]&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;\bibliographystyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;IEEEtran&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;url&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;You need to call &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\bibliography{}&lt;/code&gt; command with the name of your BibTex file where you want to place your bibliography list (typically at the end of the document).&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\bibname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;References&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\bibliography&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;my&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;biblio&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;db&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;acronyms-and-glosaries&quot;&gt;Acronyms and Glosaries&lt;/h3&gt;
+&lt;h3 id=&quot;acronyms-and-glossaries&quot;&gt;Acronyms and Glossaries&lt;/h3&gt;
 &lt;p&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glossaries&lt;/code&gt; package for list of symbols and acronyms.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[xindy,acronym,shortcuts,nowarn,nosuper,nonumberlist,smallcaps]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;glossaries&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;glossary-longragged&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;glossary-tree&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;glossary-tree&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\setacronymstyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;long-short&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\glsdisablehyper&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\makeglossaries&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\immediate\write&lt;/span&gt;18&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;makeglossaries &lt;span class=&quot;k&quot;&gt;\jobname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% run (pdf)latex twice with --shell-escape&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\immediate\write&lt;/span&gt;18&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;makeglossaries &lt;span class=&quot;k&quot;&gt;\jobname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;% runs (pdf)latex twice with --shell-escape&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\makeglossaries&lt;/span&gt;
-	
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This uses small caps, if you want normal caps for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	
-    &lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\glsnamefont&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;[1]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\MakeUppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;#1&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-	
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can define new glossaries styles if for example the alignment or spacing of acronyms list is not perfrct. The package &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glossaries-extra&lt;/code&gt; provides more optuons and flexibility, especially if you have more than one abbrevation list (e.g. acronyms and symbols). The follwing is an example showing how you can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setabbreviationstyle&lt;/code&gt; command for each category of abbreviations that you have.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;	   
-    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[acronym,shortcuts=ac]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;glossaries-extra&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\glsabbrvscfont&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;[1]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textsc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\MakeTextLowercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\caps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;#1&lt;span class=&quot;p&quot;&gt;}}}}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;\setabbreviationstyle&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[acronym]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;long-short-sc&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
-&lt;p&gt;The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may reffer to a style manual for details. Here, we just consider typesetting options in tex, and recmmend the use of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enumitem&lt;/code&gt; package. With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enumitem&lt;/code&gt; you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style.&lt;/p&gt;
-
-&lt;p&gt;The follwing code creates the list style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hang&lt;/code&gt; for block lists that are hanging from a paragraph with small separation, the style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alph&lt;/code&gt; for lists with alphabetical labels, and a new environment &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ienum&lt;/code&gt; for inline lists with short phrase. If long phrase or sentences are use in inline list, the puncuation would be different.&lt;/p&gt;
+&lt;p&gt;This uses small caps for glossaries, if you want normal capital letters for the glossaries list and still small caps for acronyms in the body text, then use this command after loading glossaries package.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
-	&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[shortlabels, inline]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;enumitem&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\renewcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\glsnamefont&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;[1]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\MakeUppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;#1&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+    
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
+&lt;p&gt;The last part of this post is about typesetting lists, i.e. bulleted, ordered or just simple lists. As long as possible, a list must be part of a paragraph, and belong to or contain full sentences. Proper styling of lists is in itself a complicated matter, and you may refer to a style manual for details. Here, we just consider typesetting options in tex, and recommend the use of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enumitem&lt;/code&gt; package. With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enumitem&lt;/code&gt; you can adjust both inline and block lists with a great degree of freedom. For example, I prefer to reduce the spacing on top of the block list compared to defaults. Defining custom lists, especially inline ones, can greatly help with the consistency of the style.&lt;/p&gt;
+
+&lt;p&gt;As an example, the following code creates the list style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hang&lt;/code&gt; for block lists that are hanging from a paragraph with small separation, the style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alph&lt;/code&gt; for lists with alphabetical labels, and a new environment &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ienum&lt;/code&gt; for inline lists with short phrase. If long phrase or sentences are used in inline list, the punctuation would be different.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;    
+    &lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[shortlabels, inline]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;enumitem&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\setlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;nolistsep&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetEnumitemKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;hang&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
-		leftmargin=!, labelindent=&lt;span class=&quot;k&quot;&gt;\parindent&lt;/span&gt;+1em, labelsep=0.5em, labelwidth=1em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;\SetEnumitemKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;alph&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;label=&lt;span class=&quot;k&quot;&gt;\emph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\alph*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;.&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetEnumitemKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;hang&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
+        leftmargin=!, labelindent=&lt;span class=&quot;k&quot;&gt;\parindent&lt;/span&gt;+1em, labelsep=0.5em, labelwidth=1em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;\SetEnumitemKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;alph&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;label=&lt;span class=&quot;k&quot;&gt;\emph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\alph*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;.&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;\newenvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Ienum&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;\begin{enumerate*}&lt;/span&gt;[label=(&lt;span class=&quot;k&quot;&gt;\roman*&lt;/span&gt;), itemjoin=&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;, &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;, itemjoin*=&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;, and &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;]&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;\end{enumerate*}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;to-be-continued&quot;&gt;To be Continued&lt;/h2&gt;
-&lt;p&gt;This post covered the essential stuff in LaTeX. There will be a next part to this series covering XeTeX and a long list of custom settings and definitions. Stay tuned :)&lt;/p&gt;</content><author><name></name></author><summary type="html">About four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. But that template did not look right - sometimes I get obsessed with how things look like. Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic. Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="Hello World" /><published>2020-09-01T00:00:00+03:00</published><updated>2020-09-01T00:00:00+03:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Over the years I have been setting up many weblogs and CMS sites for people. When WordPress came out and everyone was migrating to it, I also created a blog for myself. I did so with Drupal and few other platforms, but none of those weblogs survived beyond couple of posts. You see the dilemma here; the focus has been on technology rather than the content. Some days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, which looked like a good material for publishing. Seeing an Ad from GoDaddy for 2$ domain registration completed the picture. I registered “randomdoctor.com” and started yet another blog. Hopefully this one will last for a while :) I wrote a short &lt;a href=&quot;/about&quot;&gt;biography of myself&lt;/a&gt; that you may read, or continue with the following notes about setting up the blog.&lt;/p&gt;
+&lt;p&gt;This post covered some essential typesetting subjects in LaTeX. There will be a next part from this series covering XeTeX and providing a long list of custom settings and definitions. Stay tuned :)&lt;/p&gt;</content><author><name></name></author><summary type="html">About four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. But that template did not look right - sometimes I get obsessed with how things look like. Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic. Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="Hello World" /><published>2020-10-01T00:00:00+03:00</published><updated>2020-10-01T00:00:00+03:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Over the years I have been setting up many weblogs and CMS sites for people. When WordPress came out and everyone was migrating to it, I also created a blog for myself. I did so with Drupal and few other platforms, but none of those weblogs survived beyond couple of posts. You see the pattern here; the focus has been on technology rather than the content. Some days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, which looked like a good material for publishing. Seeing an Ad from GoDaddy for 2$ domain registration completed the picture. I registered “randomdoctor.com” and started yet another blog. Hopefully this one will last for a while :) I wrote a short &lt;a href=&quot;/about&quot;&gt;biography of myself&lt;/a&gt; that you may read, or continue with the following notes about setting up the blog.&lt;/p&gt;
 
 &lt;h2 id=&quot;blog--setup&quot;&gt;Blog  Setup&lt;/h2&gt;
 &lt;p&gt;I used GitHub to host the blog. GitHub Pages is magical in its automatic building of Jekyll websites. I followed the instructions given &lt;a href=&quot;https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/&quot;&gt;in this well written blog post&lt;/a&gt;. Afterwards, I installed Jekyll on my MacBook, and started experimenting with it locally. All in all, I liked this exercise very much :). Here are some notes regarding my experience.&lt;/p&gt;
@@ -310,4 +290,4 @@ However, instead of using &lt;code class=&quot;language-plaintext highlighter-ro
   inside a new div block &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;date&quot;&amp;gt;&lt;/code&gt; under the title line. I also moved the same tag in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/post.html&lt;/code&gt; from bottom to the top.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Over the years I have been setting up many weblogs and CMS sites for people. When WordPress came out and everyone was migrating to it, I also created a blog for myself. I did so with Drupal and few other platforms, but none of those weblogs survived beyond couple of posts. You see the dilemma here; the focus has been on technology rather than the content. Some days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, which looked like a good material for publishing. Seeing an Ad from GoDaddy for 2$ domain registration completed the picture. I registered “randomdoctor.com” and started yet another blog. Hopefully this one will last for a while :) I wrote a short biography of myself that you may read, or continue with the following notes about setting up the blog.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Over the years I have been setting up many weblogs and CMS sites for people. When WordPress came out and everyone was migrating to it, I also created a blog for myself. I did so with Drupal and few other platforms, but none of those weblogs survived beyond couple of posts. You see the pattern here; the focus has been on technology rather than the content. Some days ago, I got interested in Jekyll and decided to give it a go after many years of no web development. Meanwhile I started writing some notes about typesetting in TeX for a colleague, which looked like a good material for publishing. Seeing an Ad from GoDaddy for 2$ domain registration completed the picture. I registered “randomdoctor.com” and started yet another blog. Hopefully this one will last for a while :) I wrote a short biography of myself that you may read, or continue with the following notes about setting up the blog.</summary></entry></feed>
