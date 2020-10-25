@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-About four years ago I started the writing of my PhD thesis using a [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template provided by the university. 
+Around four years ago I started the writing of my PhD thesis using a [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template provided by the university. 
 But the template was far from perfect - sometimes I get obsessed with how things look like. 
 There were two major issues with the template: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
 Consequently, I spent same amount of time on styling the thesis as I spent on writing the actual content :D. 
