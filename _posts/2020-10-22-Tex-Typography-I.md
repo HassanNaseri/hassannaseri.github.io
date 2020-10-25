@@ -25,7 +25,7 @@ There are also many very good websites to search for or ask about things that yo
 
 
 ##  Fonts 
-A quick disclaimer before we start: in order to keep things simple, the word "font" is used loosely in this document, and interchangeably with the word typeface. 
+First, a quick disclaimer: in order to keep things simple, the word "font" is used loosely in this document, and interchangeably with the word typeface. 
 TeX has two main font families used for text [serif](https://en.wikipedia.org/wiki/Serif) and [sans-serif](https://en.wikipedia.org/wiki/Sans-serif). There is also a [monospaced](https://en.wikipedia.org/wiki/Monospaced_font) family, known as *typewriter* in TeX. 
 For math typesetting, there is normal math font and a math calligraphy font (known as *mathcal*). Other typefaces might be also used in math, including *math blackboard* and *math script*. Ideally all these font families should have matching shapes. That is, they have relatively similar size, weight and shape, so they complement each other. 
 
