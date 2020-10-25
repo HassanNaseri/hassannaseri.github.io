@@ -9,16 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="About four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. 
-But that template did not look right - sometimes I get obsessed with how things look like. 
-Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
-Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.
+    <meta name="description" content="Around four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. 
+But the template was far from perfect - sometimes I get obsessed with how things look like. 
+There were two major issues with the template: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
+Consequently, I spent same amount of time on styling the thesis as I spent on writing the actual content :D.
 
 " />
-    <meta property="og:description" content="About four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. 
-But that template did not look right - sometimes I get obsessed with how things look like. 
-Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
-Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.
+    <meta property="og:description" content="Around four years ago I started the writing of my PhD thesis using a LaTeX template provided by the university. 
+But the template was far from perfect - sometimes I get obsessed with how things look like. 
+There were two major issues with the template: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
+Consequently, I spent same amount of time on styling the thesis as I spent on writing the actual content :D.
 
 " />
     
@@ -72,10 +72,10 @@ Consequently, I spent same amount of time on styling as I spent on writing the a
   <h1>Tex Typography I</h1>
 
   <div class="entry">
-    <p>About four years ago I started the writing of my PhD thesis using a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> template provided by the university. 
-But that template did not look right - sometimes I get obsessed with how things look like. 
-Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
-Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D.</p>
+    <p>Around four years ago I started the writing of my PhD thesis using a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> template provided by the university. 
+But the template was far from perfect - sometimes I get obsessed with how things look like. 
+There were two major issues with the template: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
+Consequently, I spent same amount of time on styling the thesis as I spent on writing the actual content :D.</p>
 
 <div style="width: 80%;
             padding-left: 3px; padding-right: 3px;">
@@ -86,15 +86,15 @@ Consequently, I spent same amount of time on styling as I spent on writing the a
 
 <p>Addressing the first issue required enabling Sentinel and Nimbus Sans fonts in LaTeX for both text and math, which can only end in despair. I eventually switched from <a href="https://en.wikipedia.org/wiki/PdfTeX">pdfTeX</a> to <a href="https://en.wikipedia.org/wiki/XeTeX">XeTeX</a> to use OpenType fonts freely for text and math. The second issue, was addressed using a plethora of new packages, settings and definitions applicable to both LaTeX and XeLaTex. 
 Hence, I considerably modified the university template, and also created a new XeLaTex template, hoping that it may benefit others as well.
-Here, I am publishing the highlights of what I learned in this process in a couple of blog posts. The first part covers LaTeX and more generic considerations regarding typesetting. 
+Here, I am publishing the highlights of what I learned in this process in a couple of blog posts. The first part, that you are reading now, covers LaTeX and more generic considerations regarding typesetting. 
 The second part will cover XeTeX together with a long list of custom settings and definitions.</p>
 
-<p>Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
+<p>Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact, most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
 Moreover, this series is not about writing style, except for few tips. I would like to stress the importance of following a style guide for writing. There are few comprehensive style guides out there. Choose one and stick to it. <a href="https://www.chicagomanualofstyle.org/home.html">The Chicago Manual of Style</a> is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge relief whenever in doubt. 
 There are also many very good websites to search for or ask about things that you don’t find in a style guide. I extensively used <a href="https://english.stackexchange.com/">english.stackexchange.com</a> and <a href="https://tex.stackexchange.com/">tex.stackexchange.com</a>.</p>
 
 <h2 id="fonts">Fonts</h2>
-<p>A quick disclaimer before we start: in order to keep things simple, the word “font” is used loosely in this document, and interchangeably with the word typeface. 
+<p>First, a quick disclaimer: in order to keep things simple, the word “font” is used loosely in this document, and interchangeably with the word typeface. 
 TeX has two main font families used for text <a href="https://en.wikipedia.org/wiki/Serif">serif</a> and <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serif</a>. There is also a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> family, known as <em>typewriter</em> in TeX. 
 For math typesetting, there is normal math font and a math calligraphy font (known as <em>mathcal</em>). Other typefaces might be also used in math, including <em>math blackboard</em> and <em>math script</em>. Ideally all these font families should have matching shapes. That is, they have relatively similar size, weight and shape, so they complement each other.</p>
 
@@ -381,7 +381,7 @@ However, instead of using <code class="language-plaintext highlighter-rouge">\la
 
 <a href="https://www.linkedin.com/in/hassannaseri"><i class="svg-icon linkedin"></i></a>
 
-
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
 
 
 

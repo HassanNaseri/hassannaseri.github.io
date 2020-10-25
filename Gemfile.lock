@@ -351,6 +351,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-email-protect
+  jekyll-feed
   jekyll-theme-midnight
   rails
 
