@@ -15,11 +15,11 @@ Consequently, I spent same amount of time on styling the thesis as I spent on wr
 
 Addressing the first issue required enabling Sentinel and Nimbus Sans fonts in LaTeX for both text and math, which can only end in despair. I eventually switched from [pdfTeX](https://en.wikipedia.org/wiki/PdfTeX) to [XeTeX](https://en.wikipedia.org/wiki/XeTeX) to use OpenType fonts freely for text and math. The second issue, was addressed using a plethora of new packages, settings and definitions applicable to both LaTeX and XeLaTex. 
 Hence, I considerably modified the university template, and also created a new XeLaTex template, hoping that it may benefit others as well.
-Here, I am publishing the highlights of what I learned in this process in a couple of blog posts. The first part covers LaTeX and more generic considerations regarding typesetting. 
+Here, I am publishing the highlights of what I learned in this process in a couple of blog posts. The first part, that you are reading now, covers LaTeX and more generic considerations regarding typesetting. 
 The second part will cover XeTeX together with a long list of custom settings and definitions.
 
  
-Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
+Before diving into TeX detail, I need to emphasize that this post is not a comprehensive guide on styling, but a mere collection of random notes. Ideally you have a well constructed LaTeX template to start with, and do not worry about anything other than writing. In fact, most institutes and publishers would recommend against changing anything in their provided template. However, it is not usually the case for an obsessive mind :) 
 Moreover, this series is not about writing style, except for few tips. I would like to stress the importance of following a style guide for writing. There are few comprehensive style guides out there. Choose one and stick to it. [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html) is the one that I use. You may not read it cover to cover, but having a style book on your desk is a huge relief whenever in doubt. 
 There are also many very good websites to search for or ask about things that you don't find in a style guide. I extensively used [english.stackexchange.com](https://english.stackexchange.com/) and [tex.stackexchange.com](https://tex.stackexchange.com/).
 
