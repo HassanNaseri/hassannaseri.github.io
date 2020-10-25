@@ -2,9 +2,9 @@
 published: true
 ---
 About four years ago I started the writing of my PhD thesis using a [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template provided by the university. 
-But that template did not look right - sometimes I get obsessed with how things look like. 
-Two major issues were that: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
-Consequently, I spent same amount of time on styling as I spent on writing the actual thesis :D. 
+But the template was far from perfect - sometimes I get obsessed with how things look like. 
+There were two major issues with the template: a) the official visual style of the university was not present in the LaTeX template; and b) the typesetting for mathematics and some other environments were quite limited and basic.
+Consequently, I spent same amount of time on styling the thesis as I spent on writing the actual content :D. 
 
 <div style="width: 80%;
             padding-left: 3px; padding-right: 3px;" >
