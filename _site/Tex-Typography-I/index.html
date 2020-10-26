@@ -96,9 +96,9 @@ There are also many very good websites to search for or ask about things that yo
 <h2 id="fonts">Fonts</h2>
 <p>First, a quick disclaimer: in order to keep things simple, the word “font” is used loosely in this document, and interchangeably with the word typeface. 
 TeX has two main font families used for text <a href="https://en.wikipedia.org/wiki/Serif">serif</a> and <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serif</a>. There is also a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> family, known as <em>typewriter</em> in TeX. 
-For math typesetting, there is normal math font and a math calligraphy font (known as <em>mathcal</em>). Other typefaces might be also used in math, including <em>math blackboard</em> and <em>math script</em>. Ideally all these font families should have matching shapes. That is, they have relatively similar size, weight and shape, so they complement each other.</p>
-
-<p>To me, the principal of good typesetting is consistency, which cannot be achieved without  matching fonts throughout the whole document. One can write a whole book with perfect typesetting using only one font. This gets exceedingly impractical once you have a handful of different fonts. 
+For math typesetting, there is normal math font and a math calligraphy font (known as <em>mathcal</em>). Other typefaces might be also used in math, including <em>math blackboard</em> and <em>math script</em>. Ideally all these font families should have matching shapes. That is, they have relatively similar size, weight and shape, so they complement each other. 
+ s
+To me, the principal of good typesetting is consistency, which cannot be achieved without  matching fonts throughout the whole document. One can write a whole book with perfect typesetting using only one font. This gets exceedingly impractical once you have a handful of different fonts. 
 If one of the default TeX templates is used, the <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a> family of typefaces (actually the updated Latin Modern) gets applied. It comes with matching shapes for serif, non-serif, typewriter, math, etc., and guarantees an almost perfect typesetting for all text and math throughout the document.</p>
 
 <h3 id="the-problem">The Problem</h3>
@@ -336,12 +336,12 @@ However, instead of using <code class="language-plaintext highlighter-rouge">\la
     <span class="k">\SetEnumitemKey</span><span class="p">{</span>hang<span class="p">}{</span>topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
         leftmargin=!, labelindent=<span class="k">\parindent</span>+1em, labelsep=0.5em, labelwidth=1em<span class="p">}</span>
     <span class="k">\SetEnumitemKey</span><span class="p">{</span>alph<span class="p">}{</span>label=<span class="k">\emph</span><span class="p">{</span><span class="k">\alph*</span><span class="p">}</span><span class="k">\textbf</span><span class="p">{</span>.<span class="p">}}</span>
-    <span class="k">\newenvironment</span><span class="p">{</span>Ienum<span class="p">}{</span><span class="nt">\begin{enumerate*}</span>[label=(<span class="k">\roman*</span>), itemjoin=<span class="p">{{</span>, <span class="p">}}</span>, itemjoin*=<span class="p">{{</span>, and <span class="p">}}</span>]<span class="p">}</span><span class="c">%</span>
+    <span class="k">\newenvironment</span><span class="p">{</span>Ienum<span class="p">}{</span><span class="nt">\begin{enumerate*}</span>[label=(<span class="k">\roman*</span>), itemjoin=<span class="p">{{</span>, <span class="p">}}</span>, itemjoin*=<span class="p">{{</span>, and <span class="p">}}</span>]<span class="p">}</span>
     <span class="p">{</span><span class="nt">\end{enumerate*}</span><span class="p">}</span>
     
     </code></pre></figure>
 
-<h2 id="to-be-continued">To be Continued</h2>
+<h2 id="to-be-continued-">To be Continued …</h2>
 <p>This post covered some essential typesetting subjects in LaTeX. There will be a next part from this series covering XeTeX and providing a long list of custom settings and definitions. Stay tuned :)</p>
 
 

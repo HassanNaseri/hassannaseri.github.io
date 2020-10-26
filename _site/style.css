@@ -328,7 +328,7 @@ footer {
 code {
   font-family: "Linux Libertine Mono", "Bitstream Vera Sans Mono", "Courier", monospace;
   font-size: 12px;
-  letter-spacing: -.5px;
+  letter-spacing: -.6px;
   display: inline-block;
   white-space: pre;
 }

@@ -28,7 +28,7 @@ There are also many very good websites to search for or ask about things that yo
 First, a quick disclaimer: in order to keep things simple, the word "font" is used loosely in this document, and interchangeably with the word typeface. 
 TeX has two main font families used for text [serif](https://en.wikipedia.org/wiki/Serif) and [sans-serif](https://en.wikipedia.org/wiki/Sans-serif). There is also a [monospaced](https://en.wikipedia.org/wiki/Monospaced_font) family, known as *typewriter* in TeX. 
 For math typesetting, there is normal math font and a math calligraphy font (known as *mathcal*). Other typefaces might be also used in math, including *math blackboard* and *math script*. Ideally all these font families should have matching shapes. That is, they have relatively similar size, weight and shape, so they complement each other. 
-
+ s
 To me, the principal of good typesetting is consistency, which cannot be achieved without  matching fonts throughout the whole document. One can write a whole book with perfect typesetting using only one font. This gets exceedingly impractical once you have a handful of different fonts. 
 If one of the default TeX templates is used, the [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern) family of typefaces (actually the updated Latin Modern) gets applied. It comes with matching shapes for serif, non-serif, typewriter, math, etc., and guarantees an almost perfect typesetting for all text and math throughout the document.
 
@@ -293,13 +293,13 @@ As an example, the following code creates the list style `hang` for block lists 
     \SetEnumitemKey{hang}{topsep=3pt, partopsep=1pt, parsep=0pt, itemsep=2pt, 
         leftmargin=!, labelindent=\parindent+1em, labelsep=0.5em, labelwidth=1em}
     \SetEnumitemKey{alph}{label=\emph{\alph*}\textbf{.}}
-    \newenvironment{Ienum}{\begin{enumerate*}[label=(\roman*), itemjoin={{, }}, itemjoin*={{, and }}]}%
+    \newenvironment{Ienum}{\begin{enumerate*}[label=(\roman*), itemjoin={{, }}, itemjoin*={{, and }}]}
     {\end{enumerate*}}
     {% endraw %}
     {% endhighlight %}
 
 
-## To be Continued
+## To be Continued ...
 This post covered some essential typesetting subjects in LaTeX. There will be a next part from this series covering XeTeX and providing a long list of custom settings and definitions. Stay tuned :)
 
 
