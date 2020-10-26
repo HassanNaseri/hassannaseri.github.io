@@ -7,19 +7,17 @@
   //-webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
   //box-shadow: 3px 3px rgba(0,0,0,0.1);
   //margin: 10px 0 10px 0;
-  overflow: scroll;
-  //margin-block-start: 0;
-  //margin-block-end: 0;
-  //margin-inline-start: 0;
-  //margin-inline-end: 0;
+  overflow: auto;
+  margin: -12px 0 -25px 0;
 }
 
 code {
 //  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
   font-family: $code-font;
-  font-size: 13px;
-  letter-spacing: -0.5px;
+  font-size: 12px;
+  letter-spacing: -.5px;
   display: inline-block;
+  white-space: pre;
 }
 
 .highlight .c { color: #586E75 } /* Comment */

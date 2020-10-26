@@ -113,7 +113,7 @@ h4 {
 }
 
 p {
-  margin: 15px 0;
+  margin: 10px 0 8px 0;
 }
 
 a {
@@ -321,14 +321,16 @@ footer {
 
 .highlight {
   background-color: #E2E1DE;
-  overflow: scroll;
+  overflow: auto;
+  margin: -12px 0 -25px 0;
 }
 
 code {
   font-family: "Linux Libertine Mono", "Bitstream Vera Sans Mono", "Courier", monospace;
-  font-size: 13px;
-  letter-spacing: -0.5px;
+  font-size: 12px;
+  letter-spacing: -.5px;
   display: inline-block;
+  white-space: pre;
 }
 
 .highlight .c {
